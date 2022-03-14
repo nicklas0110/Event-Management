@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.06" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/samantha-gades-fIHozNWfcvs-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="UserNameField" layoutX="197.0" layoutY="134.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter your user name" />
+      <PasswordField fx:id="PasswordField" layoutX="197.0" layoutY="189.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter your password" />
+      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="197.0" layoutY="244.0" prefHeight="36.0" prefWidth="214.0" ripplerFill="#ff0a62" style="-fx-border-color: #066c89;" text="Login" />
+      <Label layoutX="197.0" layoutY="34.0" prefHeight="36.0" prefWidth="214.0" text="Event">
+         <font>
+            <Font size="42.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.3560606421846332" proportional="false" startX="0.5265151515151515">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9473684430122375" green="0.21403509378433228" blue="0.21403509378433228" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007680491551459294">
+                     <color>
+                        <Color red="0.9473684430122375" green="0.21403509378433228" blue="0.21403509378433228" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.0235294122248888" green="0.42352941632270813" blue="0.5372549295425415" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="197.0" layoutY="113.0" text="Username" textFill="#2e468f" />
+      <Label layoutX="196.0" layoutY="171.0" prefHeight="0.0" prefWidth="54.0" text="Password" textFill="#2e468f" />
+   </children>
+</AnchorPane>
