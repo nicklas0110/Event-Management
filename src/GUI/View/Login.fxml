@@ -1,31 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@stylesheet/Login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.LoginController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="607.0" layoutX="1.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/samantha-gades-fIHozNWfcvs-unsplash.jpg" />
-         </image>
-      </ImageView>
-      <TextField fx:id="UserNameField" layoutX="177.0" layoutY="158.0" prefHeight="26.0" prefWidth="264.0" promptText="Enter your user name" />
-      <PasswordField fx:id="PasswordField" layoutX="177.0" layoutY="217.0" prefHeight="26.0" prefWidth="264.0" promptText="Enter your password" />
-      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="177.0" layoutY="268.0" onAction="#LogInAction" prefHeight="36.0" prefWidth="264.0" ripplerFill="#1aaabd" style="-fx-border-color: #1A8BB7; -fx-background-color: #1A8BB7;" text="Log in" textFill="WHITE" />
-      <Label layoutX="177.0" layoutY="137.0" text="Username" />
-      <Label layoutX="176.0" layoutY="199.0" prefHeight="0.0" prefWidth="54.0" text="Password" />
-      <CheckBox layoutX="178.0" layoutY="337.0" mnemonicParsing="false" onAction="#saveLogin" text="Remember me" />
-      <ImageView fitHeight="117.0" fitWidth="155.0" layoutX="247.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/logo.jpg" />
-         </image>
-      </ImageView>
+      <Pane fx:id="test" layoutX="90.0" layoutY="-1.0" prefHeight="406.0" prefWidth="430.0">
+         <children>
+            <FontAwesomeIconView fx:id="userIkon" fill="#0d3373" glyphName="USER" layoutX="54.0" layoutY="174.0" selectionEnd="1" selectionFill="#384e7e" size="25" text="" wrappingWidth="14.142857551574707" />
+            <FontAwesomeIconView fx:id="LockIkon" fill="#0d3373" glyphName="LOCK" layoutX="53.0" layoutY="235.0" selectionEnd="1" size="25" />
+            <ImageView fx:id="Logo" fitHeight="117.0" fitWidth="155.0" layoutX="138.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="titleView" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Management" textAlignment="CENTER" wrappingWidth="430.39999999999986">
+               <fill>
+                  <LinearGradient endX="0.1212121826229674" endY="0.29166672807751276" startX="0.12121212301832257" startY="0.3712120923128995">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007680491551459294">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.13746589422225952" green="0.8147784471511841" blue="0.8631578683853149" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <ImageView fitHeight="400.0" fitWidth="607.0" layoutX="1.0" opacity="0.24" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <TextField fx:id="UserNameField" layoutX="177.0" layoutY="149.0" prefHeight="36.0" prefWidth="264.0" promptText="Enter your user name" />
+      <PasswordField fx:id="PasswordField" layoutX="177.0" layoutY="208.0" prefHeight="36.0" prefWidth="264.0" promptText="Enter your password" />
+      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="178.0" layoutY="287.0" onAction="#LogInAction" prefHeight="36.0" prefWidth="264.0" ripplerFill="#1aaabd" style="-fx-background-color: #1aaabd;" text="Log in" textFill="WHITE" />
+      <CheckBox fx:id="check" layoutX="180.0" layoutY="253.0" mnemonicParsing="false" onAction="#saveLogin" text="Remember me" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" />
    </children>
+
 </AnchorPane>

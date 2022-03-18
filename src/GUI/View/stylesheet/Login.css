@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Happy+Monkey&family=Prompt:ital,wght@1,800&display=swap');
+
+.root {
+    -fx-background-image: url('../img/samantha-gades-fIHozNWfcvs-unsplash.jpg');
+    -fx-content-display: center;
+    -fx-background-size: 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+#test {
+
+    -fx-background-color: radial-gradient(focus-angle 12deg, focus-distance 0%, center 40% 40%, radius 110%, rgb(255, 255, 255) 40%, rgb(66, 66, 66) 110%);
+    -fx-opacity: 90%;
+    -fx-border-color: #1aaabd;
+    -fx-border-width: 2px;
+}
+
+#btnLogin:hover {
+
+    -fx-cursor: hand;
+}
+
+#UserNameField, #PasswordField {
+    -fx-border-color: #424242FF;
+}
+
+#userIcon {
+    -fx-background-image: url('../img/lock-solid.svg');
+    -fx-background-size: 100%;
+}
+
+#titleView {
+    -fx-font-size: 25px;
+    -fx-font-family: 'Happy Monkey', cursive;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+ }
+#btnLogin{
+    -fx-font-size: 15px;
+}
