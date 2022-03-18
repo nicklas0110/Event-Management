@@ -11,5 +11,7 @@
     <orderEntry type="library" name="jfoenix" level="project" />
     <orderEntry type="library" name="sqljdbc42" level="project" />
     <orderEntry type="library" name="de.jensd.fontawesomefx.fontawesome" level="project" />
+    <orderEntry type="library" name="fontawesomefx-commons-9.1.2" level="project" />
+    <orderEntry type="library" name="fontawesomefx-fontawesome-4.7.0-9.1.2" level="project" />
   </component>
 </module>
