@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="BilletView" prefHeight="400.0" prefWidth="600.0" stylesheets="@stylesheet/billet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.BilletController">
+   <children>
+      <TableView fx:id="tableView" layoutY="63.0" prefHeight="258.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="eventColumnView" prefWidth="192.0" text="Event " />
+          <TableColumn fx:id="datoColumnView" prefWidth="129.60003662109375" text="Dato" />
+            <TableColumn fx:id="timeColumnView" prefWidth="160.79998779296875" text="Time" />
+            <TableColumn fx:id="emailColumnView" prefWidth="118.4000244140625" text="E-mail" />
+        </columns>
+      </TableView>
+      <Label layoutX="252.0" layoutY="14.0" text="My Billet">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="458.0" layoutY="344.0" prefHeight="36.0" prefWidth="96.0" style="-fx-border-color: #543f3f;" text="Close" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+#BilletView{
+    -fx-background-color: radial-gradient(focus-angle 12deg, focus-distance 0%, center 40% 40%, radius 110%, rgb(252, 173, 151) 40%, rgb(198, 178, 8) 110%);
+}
+
+#tableView{
+    -fx-background-color: FCAD97FF;
+    -fx-border-color: #543f3f;
+ }
+
+#eventColumnView,#datoColumnView,#timeColumnView,#emailColumnView{
+    -fx-border-color: #543f3f;
+    -fx-border-width: 1;
+    -fx-background-color: #C6B208FF;
+
+}

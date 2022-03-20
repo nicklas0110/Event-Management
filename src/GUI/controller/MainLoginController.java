@@ -15,11 +15,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-import java.awt.*;
 import java.io.IOException;
 
 
-public class LoginController {
+public class MainLoginController {
     @FXML
     private TextField UserNameField;
 
