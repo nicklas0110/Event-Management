@@ -15,8 +15,6 @@ public class Main extends Application {
         primaryStage.setTitle("EventView");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-
-
     }
     StackPane pane = new StackPane();
     Scene scene = new Scene(pane,100,100);

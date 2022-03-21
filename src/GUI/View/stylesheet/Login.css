@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Happy+Monkey&family=Prompt:ital,wght@1,800&display=swap');
 
 .root {
-    -fx-background-image: url('../img/samantha-gades-fIHozNWfcvs-unsplash.jpg');
     -fx-content-display: center;
     -fx-background-size: 100%;
     -fx-background-repeat: no-repeat;
