@@ -1,22 +1,23 @@
 package BE;
 
 public class EventCoordinator {
-    private String userName;
-    private String password;
 
-    public String getUserName() {
-        return userName;
+    private String EventUserName = "event";
+    private String EventPassword = "event";
+
+    public String getEventUserName() {
+        return EventUserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEventUserName(String eventUserName) {
+        EventUserName = eventUserName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEventPassword() {
+        return EventPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEventPassword(String eventPassword) {
+        EventPassword = eventPassword;
     }
 }
