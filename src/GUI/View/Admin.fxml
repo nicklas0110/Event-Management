@@ -22,6 +22,6 @@
       <JFXButton fx:id="createEventManger" layoutX="49.0" layoutY="126.0" onAction="#createEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create New Event Manger" />
       <JFXButton fx:id="editEventManger" layoutX="49.0" layoutY="248.0" onAction="#editEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Edit Event Manger" />
       <JFXButton fx:id="deletEventManger" layoutX="49.0" layoutY="374.0" onAction="#deletEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Delete Event Manger" />
-      <JFXButton fx:id="dlogOutAdmin" layoutX="822.0" layoutY="14.0" onAction="#logOutAdminBtn" prefHeight="45.0" prefWidth="84.0" style="-fx-background-color: #00CBD6;" text="LogOut" />
+      <JFXButton fx:id="logOutAdmin" layoutX="822.0" layoutY="14.0" onAction="#logOutAdminBtn" prefHeight="45.0" prefWidth="84.0" style="-fx-background-color: #00CBD6;" text="LogOut" />
    </children>
 </AnchorPane>
