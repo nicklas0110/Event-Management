@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
-public class DatabaseConnecter {
+public class DatabaseConnector {
 
     private static final String PROP_FILE = "config.config.properties";
     private SQLServerDataSource ds;
@@ -16,7 +16,7 @@ public class DatabaseConnecter {
     /**
      * Constructor for the database connector.
      */
-    public void DatabaseConnecter() throws IOException
+    public void DatabaseConnector() throws IOException
     {
         Properties settings = new Properties();
         settings.load(new FileInputStream(PROP_FILE));
