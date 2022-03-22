@@ -1,4 +1,4 @@
-package BLL.db;
+package DLL.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -16,7 +16,7 @@ public class DatabaseConnecter {
     /**
      * Constructor for the database connector.
      */
-    public void DBConnector() throws IOException
+    public void DatabaseConnecter() throws IOException
     {
         Properties settings = new Properties();
         settings.load(new FileInputStream(PROP_FILE));
