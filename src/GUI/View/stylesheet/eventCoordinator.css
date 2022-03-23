@@ -1,0 +1,7 @@
+.root{
+}
+
+#paneEventC{
+    -fx-background-color: radial-gradient(focus-angle 30deg, focus-distance 0%, center 60% 60%, radius 100%, rgb(215, 100, 254) 40%, rgb(0, 203, 214) 100%);
+
+}

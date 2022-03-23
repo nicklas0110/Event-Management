@@ -1,4 +1,4 @@
-package BLL.db;
+package DLL.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -8,15 +8,15 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
-public class DatabaseConnecter {
+public class DatabaseConnector {
 
-    private static final String PROP_FILE = "config.config.properties";
+    private static final String PROP_FILE = "config.properties";
     private SQLServerDataSource ds;
 
     /**
      * Constructor for the database connector.
      */
-    public void DBConnector() throws IOException
+    public DatabaseConnector() throws IOException
     {
         Properties settings = new Properties();
         settings.load(new FileInputStream(PROP_FILE));
@@ -26,6 +26,7 @@ public class DatabaseConnecter {
         ds.setDatabaseName(settings.getProperty("Database"));
         ds.setUser(settings.getProperty("Username"));
         ds.setPassword(settings.getProperty("Password"));
+        ds.setTrustServerCertificate(true);
     }
 
     /**

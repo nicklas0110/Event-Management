@@ -2,22 +2,22 @@ package BE;
 
 public class Admin {
 
-    private String userName;
-    private String password;
+    private String AdminUserName = "admin";
+    private String AdminPassword = "admin";
 
-    public String getUserName() {
-        return userName;
+    public String getAdminUserName() {
+        return AdminUserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAdminUserName(String adminUserName) {
+        AdminUserName = adminUserName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAdminPassword() {
+        return AdminPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAdminPassword(String adminPassword) {
+        AdminPassword = adminPassword;
     }
 }

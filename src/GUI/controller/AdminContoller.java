@@ -16,6 +16,8 @@ public class AdminContoller {
     public JFXButton deletEventManger;
     public JFXButton logOutAdmin;
 
+
+
     public void createEventMangerBtn(ActionEvent event) {
     }
 
