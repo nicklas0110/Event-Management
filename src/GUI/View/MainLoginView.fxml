@@ -49,9 +49,9 @@
                   <Pane prefHeight="253.0" prefWidth="344.0">
                      <children>
                         <FontAwesomeIconView fx:id="LockIkon" fill="#543f3f" glyphName="LOCK" layoutX="62.0" layoutY="123.0" selectionEnd="1" size="25" text="" />
-                        <PasswordField fx:id="PasswordField" layoutX="94.0" layoutY="95.0" prefHeight="36.0" prefWidth="252.0" promptText="Enter your password" />
+                        <PasswordField fx:id="PasswordField" layoutX="94.0" layoutY="95.0" prefHeight="36.0" prefWidth="252.0" promptText="Password" />
                         <FontAwesomeIconView fx:id="userIkon" fill="#543f3f" glyphName="USER" layoutX="63.0" layoutY="57.0" selectionEnd="1" selectionFill="#543f3f" size="25" text="" wrappingWidth="14.142857551574707" />
-                        <TextField fx:id="UserNameField" layoutX="94.0" layoutY="31.0" prefHeight="36.0" prefWidth="252.0" promptText="Enter your username" />
+                        <TextField fx:id="UserNameField" layoutX="94.0" layoutY="31.0" prefHeight="36.0" prefWidth="252.0" promptText="User name" />
                         <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="94.0" layoutY="183.0" onAction="#LogInAction" prefHeight="36.0" prefWidth="252.0" ripplerFill="WHITE" style="-fx-background-color: #00CBD6;" text="Log in" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
