@@ -3,7 +3,6 @@ package GUI.controller;
 import BE.Admin;
 import BE.Customer;
 import BE.EventCoordinator;
-import BLL.LoginManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,57 +28,31 @@ public class MainLoginController {
 
     @FXML
     private Button btnLogin;
+
+
+    private Admin admin = new Admin();
     //private Customer customer = new Customer();
     private EventCoordinator eventCoordinator = new EventCoordinator();
 
-    private LoginManager loginManager;
-
-    public MainLoginController() {
-        try {
-            loginManager = LoginManager.getLoginManager();
-        } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Could not connect to database");
-            alert.showAndWait();
-        }
-    }
-
     public void LogInAction() throws IOException {
-        if (loginManager.login(UserNameField.getText(), PasswordField.getText())) {
-            switch (loginManager.getLoggedInUser().getUserType()) {
-                case Admin -> loadAdminView();
-                case EventCoordinator -> loadEventCoordinatorView();
-                case Customer -> loadCustomerView();
-            }
+
+        if (PasswordField.getText().equals(admin.getAdminPassword()) && UserNameField.getText().equals(admin.getAdminUserName())) {
+            Stage stage = (Stage) btnLogin.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
+            stage.setTitle("AdminView");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } else if (PasswordField.getText().equals(eventCoordinator.getEventPassword()) && UserNameField.getText().equals(eventCoordinator.getEventUserName())) {
+            Stage switcher = (Stage) btnLogin.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinator.fxml"));
+            Scene scene = new Scene(root);
+            switcher.setTitle("EventCoordinatorManagement");
+            switcher.setScene(scene);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Check your user name or password");
             alert.showAndWait();
         }
-    }
-
-    private void loadCustomerView() throws IOException {
-        Stage stage = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Customer.fxml"));
-        stage.setTitle("Customer");
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-    }
-
-    private void loadEventCoordinatorView() throws IOException {
-        Stage switcher = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinator.fxml"));
-        Scene scene = new Scene(root);
-        switcher.setTitle("EventCoordinatorManagement");
-        switcher.setScene(scene);
-    }
-
-    private void loadAdminView() throws IOException {
-        Stage stage = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
-        stage.setTitle("AdminView");
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
     }
 
     StackPane pane = new StackPane();

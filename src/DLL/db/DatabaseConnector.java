@@ -10,13 +10,13 @@ import java.util.Properties;
 
 public class DatabaseConnector {
 
-    private static final String PROP_FILE = "config.properties";
+    private static final String PROP_FILE = "config.config.properties";
     private SQLServerDataSource ds;
 
     /**
      * Constructor for the database connector.
      */
-    public DatabaseConnector() throws IOException
+    public void DatabaseConnector() throws IOException
     {
         Properties settings = new Properties();
         settings.load(new FileInputStream(PROP_FILE));
@@ -26,7 +26,6 @@ public class DatabaseConnector {
         ds.setDatabaseName(settings.getProperty("Database"));
         ds.setUser(settings.getProperty("Username"));
         ds.setPassword(settings.getProperty("Password"));
-        ds.setTrustServerCertificate(true);
     }
 
     /**
