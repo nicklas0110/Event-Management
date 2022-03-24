@@ -38,6 +38,12 @@ public class AdminController {
     public void deletEventMangerBtn(ActionEvent event) {
     }
 
-    public void logOutAdminBtn(ActionEvent event) {
+    public void logOutAdminBtn(ActionEvent event) throws IOException {
+        Stage switcher = (Stage) createEventManger.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MainLoginView.fxml"));
+        Scene scene = new Scene(root);
+        switcher.setTitle("EventCoordinatorManagement");
+        switcher.setScene(scene);
+
     }
 }

@@ -24,7 +24,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <Text fx:id="eventTitle" fill="#ffe72f" fontSmoothingType="LCD" layoutY="66.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Koordinator" textAlignment="CENTER" wrappingWidth="657.0">
+      <Text fx:id="eventTitle" fill="#ffe72f" fontSmoothingType="LCD" layoutY="66.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Coordinator" textAlignment="CENTER" wrappingWidth="657.0">
          <font>
             <Font size="48.0" />
          </font>

@@ -11,17 +11,18 @@
    <children>
       <TableView fx:id="tableView" layoutY="63.0" prefHeight="258.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="eventColumnView" prefWidth="192.0" text="Event " />
-          <TableColumn fx:id="datoColumnView" prefWidth="129.60003662109375" text="Dato" />
-            <TableColumn fx:id="timeColumnView" prefWidth="160.79998779296875" text="Time" />
-            <TableColumn fx:id="emailColumnView" prefWidth="118.4000244140625" text="E-mail" />
+          <TableColumn fx:id="eventColumnView" prefWidth="138.0" text="Event " />
+            <TableColumn fx:id="emailColumnView" prefWidth="144.0" text="Location" />
+          <TableColumn fx:id="datoColumnView" prefWidth="86.0" text="Date" />
+            <TableColumn fx:id="timeColumnView" prefWidth="95.0" text="Time" />
+            <TableColumn fx:id="ticketHolderColumnView" prefWidth="135.0" text="Ticket Holder Name" />
         </columns>
       </TableView>
-      <Label layoutX="252.0" layoutY="14.0" text="My Billet">
+      <Label layoutX="247.0" layoutY="14.0" text="My Ticket">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="458.0" layoutY="344.0" prefHeight="36.0" prefWidth="96.0" style="-fx-border-color: #543f3f;" text="Close" />
+      <JFXButton fx:id="close" buttonType="RAISED" layoutX="458.0" layoutY="344.0" onAction="#closeBtn" prefHeight="36.0" prefWidth="96.0" style="-fx-border-color: #543f3f;" text="Close" />
    </children>
 </AnchorPane>

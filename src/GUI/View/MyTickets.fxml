@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.MyTicketsController">
+   <children>
+      <TableView layoutX="55.0" layoutY="75.0" prefHeight="450.0" prefWidth="800.0">
+         <columns>
+            <TableColumn prefWidth="250.0" text="Event" />
+            <TableColumn prefWidth="250.0" text="Location" />
+            <TableColumn prefWidth="75.0" text="Date" />
+            <TableColumn prefWidth="75.0" text="Time" />
+            <TableColumn prefWidth="75.0" text="Ticket Tier" />
+            <TableColumn prefWidth="75.0" text="With food" />
+         </columns>
+      </TableView>
+      <Label layoutX="387.0" layoutY="38.0" text="Click Event to show Ticket" />
+      <JFXButton fx:id="eventExample" layoutX="56.0" layoutY="100.0" onAction="#eventExampleButton" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #00CBD6;" text="Event Example" />
+      <JFXButton fx:id="back" layoutX="822.0" layoutY="14.0" onAction="#backBtn" prefHeight="45.0" prefWidth="84.0" style="-fx-background-color: #00CBD6;" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

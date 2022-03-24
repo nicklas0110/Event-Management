@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GUI.controller.CustomerController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.CustomerController">
+   <children>
+      <JFXButton fx:id="myTickets" layoutX="72.0" layoutY="350.0" onAction="#myTicketsBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="My Tickets" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <TableView layoutX="305.0" layoutY="75.0" prefHeight="450.0" prefWidth="550.0">
+        <columns>
+          <TableColumn prefWidth="135.0" text="Event" />
+            <TableColumn prefWidth="135.0" text="Location" />
+          <TableColumn prefWidth="50.0" text="Date" />
+            <TableColumn prefWidth="50.0" text="Time" />
+            <TableColumn prefWidth="100.0" text="Ticket Tier" />
+            <TableColumn prefWidth="79.0" text="With food" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="logOutCustomer" layoutX="822.0" layoutY="14.0" onAction="#logOutCustomerBtn" prefHeight="45.0" prefWidth="84.0" style="-fx-background-color: #00CBD6;" text="LogOut" textFill="WHITE" />
+      <JFXButton fx:id="buyTickets" layoutX="72.0" layoutY="150.0" onAction="#buyTicketsBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Buy Tickets" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>
