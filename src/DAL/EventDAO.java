@@ -1,6 +1,6 @@
-package DLL;
+package DAL;
 
-import DLL.db.DatabaseConnector;
+import DAL.db.DatabaseConnector;
 
 import java.io.IOException;
 

@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.NewEventMangerController">
    <children>
       <JFXButton fx:id="createEventManger" layoutX="484.0" layoutY="445.0" onAction="#createEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
@@ -19,11 +18,11 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXTextArea layoutX="222.0" layoutY="280.0" prefHeight="36.0" prefWidth="469.0" />
-      <JFXTextArea layoutX="222.0" layoutY="352.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea layoutX="226.0" layoutY="135.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea layoutX="226.0" layoutY="208.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea layoutX="226.0" layoutY="63.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea fx:id="lastNameInput" layoutX="222.0" layoutY="280.0" prefHeight="36.0" prefWidth="469.0" />
+      <JFXTextArea fx:id="emailInput" layoutX="222.0" layoutY="352.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea fx:id="passwordInput" layoutX="226.0" layoutY="135.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea fx:id="nameInput" layoutX="226.0" layoutY="208.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea fx:id="userNameInput" layoutX="226.0" layoutY="63.0" prefHeight="26.0" prefWidth="469.0" />
       <Text layoutX="152.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
          <font>
             <Font name="System Italic" size="14.0" />

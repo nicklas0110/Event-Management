@@ -1,8 +1,8 @@
-package DLL;
+package DAL;
 
 import BE.User;
 import BE.UserType;
-import DLL.db.DatabaseConnector;
+import DAL.db.DatabaseConnector;
 
 import java.io.IOException;
 import java.sql.*;
@@ -16,20 +16,19 @@ public class UserDAO {
         DC = new DatabaseConnector();
     }
 
-    public User GetUserByUsername(String username) {
+    public User GetUserByUsername(String username, String password) {
         try (Connection connection = DC.getConnection()) {
-            String sqlStatement = "SELECT * FROM UserTable WHERE UserName = ?";
+            String sqlStatement = "SELECT * FROM UserTable WHERE UserName = ? AND UserPassword = ?";
             PreparedStatement statement = connection.prepareStatement(sqlStatement);
             statement.setString(1, username);
-
+            statement.setString(2, password);
             if (statement.execute()) {
                 ResultSet resultSet = statement.getResultSet();
                 while (resultSet.next()) {
                     String usr = resultSet.getString("UserName");
-                    String password = resultSet.getString("UserPassword");
                     UserType userType = UserTypeStrToEnum(resultSet.getString("UserType"));
 
-                    return new User(usr, password, userType);
+                    return new User(usr, userType);
                 }
             }
         } catch (SQLException ex) {

@@ -1,7 +1,7 @@
 package BLL;
 
 import BE.User;
-import DLL.UserDAO;
+import DAL.UserDAO;
 
 import java.io.IOException;
 
@@ -26,8 +26,8 @@ public class LoginManager {
     }
 
     public boolean login(String username, String password) {
-        User user = userDAO.GetUserByUsername(username);
-        if (user == null || !user.getPassword().equals(password)) return false;
+        User user = userDAO.GetUserByUsername(username, password);
+        if (user == null ) return false;
 
         loggedInUser = user;
         return true;
