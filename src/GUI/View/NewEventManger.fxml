@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GUI.controller.NewEventMangerController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.NewEventMangerController">
+   <children>
+      <JFXButton fx:id="createEventManger" layoutX="484.0" layoutY="445.0" onAction="#createEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="newEventMangerCancel" layoutX="240.0" layoutY="445.0" onAction="#newEventMangerCancelBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Cancel " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea layoutX="222.0" layoutY="280.0" prefHeight="36.0" prefWidth="469.0" />
+      <JFXTextArea layoutX="222.0" layoutY="352.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea layoutX="226.0" layoutY="135.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea layoutX="226.0" layoutY="208.0" prefHeight="26.0" prefWidth="469.0" />
+      <JFXTextArea layoutX="226.0" layoutY="63.0" prefHeight="26.0" prefWidth="469.0" />
+      <Text layoutX="152.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="152.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="152.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="153.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName:">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>
