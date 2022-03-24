@@ -9,8 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Lib" level="project" />
     <orderEntry type="library" name="jfoenix-9.0.10" level="project" />
-    <orderEntry type="library" name="mssql-jdbc-10.2.0.jre17" level="project" />
-    <orderEntry type="library" name="fontawesomefx-commons-9.1.21" level="project" />
     <orderEntry type="library" name="fontawesomefx-fontawesome-4.7.0-9.1.21" level="project" />
+    <orderEntry type="library" name="fontawesomefx-commons-9.1.21" level="project" />
+    <orderEntry type="library" name="mssql-jdbc-10.2.0.jre17" level="project" />
   </component>
 </module>
