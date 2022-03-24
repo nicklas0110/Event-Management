@@ -1,23 +1,41 @@
 package BE;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class EventCoordinator {
 
-    private String EventUserName = "event";
-    private String EventPassword = "event";
+    private int id;
+    private String name;
+    private String username;
 
-    public String getEventUserName() {
-        return EventUserName;
+    public EventCoordinator(int id, String name, String username) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
     }
 
-    public void setEventUserName(String eventUserName) {
-        EventUserName = eventUserName;
+    public int getId() {
+        return id;
     }
 
-    public String getEventPassword() {
-        return EventPassword;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setEventPassword(String eventPassword) {
-        EventPassword = eventPassword;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

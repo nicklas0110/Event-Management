@@ -11,7 +11,7 @@
       <TableView fx:id="adminEventMangerTableView" layoutX="285.0" layoutY="78.0" prefHeight="444.0" prefWidth="546.0">
          <columns>
             <TableColumn fx:id="adminEventMangerTableViewName" prefWidth="157.0" text="Name" />
-            <TableColumn fx:id="adminEventMangerTableViewLastname" prefWidth="147.0" text="Lastname" />
+            <TableColumn fx:id="adminEventMangerTableViewLastname" prefWidth="147.0" text="UserName" />
             <TableColumn fx:id="adminEventMangerTableViewEmail" prefWidth="189.0" text="E-mail" />
             <TableColumn fx:id="adminEventMangerTableViewEvents" minWidth="0.0" prefWidth="52.0" text="Events" />
          </columns>

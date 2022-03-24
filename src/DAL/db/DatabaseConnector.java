@@ -1,4 +1,4 @@
-package DLL.db;
+package DAL.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;

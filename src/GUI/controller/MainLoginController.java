@@ -28,7 +28,7 @@ public class MainLoginController {
     @FXML
     private Button btnLogin;
     //private Customer customer = new Customer();
-    private EventCoordinator eventCoordinator = new EventCoordinator();
+
 
     private LoginManager loginManager;
 
