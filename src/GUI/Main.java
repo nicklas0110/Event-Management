@@ -19,6 +19,6 @@ public class Main extends Application {
 
     
     StackPane pane = new StackPane();
-    Scene scene = new Scene(pane,100,100);
+    //Scene scene = new Scene(pane,100,100);
 
 }

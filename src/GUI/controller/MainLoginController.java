@@ -1,7 +1,5 @@
 package GUI.controller;
 
-import BE.Admin;
-import BE.Customer;
 import BE.EventCoordinator;
 import BLL.LoginManager;
 import javafx.event.ActionEvent;

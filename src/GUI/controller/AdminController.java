@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class AdminContoller {
+public class AdminController {
     public TableView adminEventMangerTableView;
     public TableColumn adminEventMangerTableViewName;
     public TableColumn adminEventMangerTableViewLastname;
