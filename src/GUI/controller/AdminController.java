@@ -1,7 +1,7 @@
 package GUI.controller;
 
 import BE.EventCoordinator;
-import GUI.Model.EventMangerModel;
+import GUI.Model.EventCoordinatorModel;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,37 +22,37 @@ import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
 
-    private final EventMangerModel eventMangerModel;
+    private final EventCoordinatorModel eventCoordinatorModel;
 
     public EventCoordinator selectedEventCoordinator;
 
 
     @FXML
-    public TableView<EventCoordinator> adminEventMangerTableView;
+    public TableView<EventCoordinator> adminEventCoordinatorTableView;
     @FXML
-    public TableColumn<EventCoordinator, String> adminEventMangerTableViewName;
+    public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewName;
     @FXML
-    public TableColumn<EventCoordinator, String> adminEventMangerTableViewLastname;
+    public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewLastname;
     @FXML
-    public TableColumn<EventCoordinator, String> adminEventMangerTableViewEmail;
+    public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewEmail;
     @FXML
-    public TableColumn<EventCoordinator, String> adminEventMangerTableViewEvents;
+    public TableColumn<EventCoordinator, String> adminEventMangerCoordinatorViewEvents;
     @FXML
-    public JFXButton createEventManger;
+    public JFXButton createEventCoordinator;
     @FXML
-    public JFXButton editEventManger;
+    public JFXButton editEventCoordinator;
     @FXML
-    public JFXButton deletEventManger;
+    public JFXButton deletEventCoordinator;
     @FXML
     public JFXButton logOutAdmin;
 
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        setAdminEventMangerTableView();
+        setAdminEventCoordinatorTableView();
 
 
-        adminEventMangerTableView.setOnMouseClicked((MouseEvent event) -> {
+        adminEventCoordinatorTableView.setOnMouseClicked((MouseEvent event) -> {
             setSelectedItems();
         });
     }
@@ -60,47 +60,47 @@ public class AdminController implements Initializable {
     /**m
      * Method used for initializing the EventCoordinator table.
      */
-    private void setAdminEventMangerTableView() {
+    private void setAdminEventCoordinatorTableView() {
 
-        adminEventMangerTableViewName.setCellValueFactory(new PropertyValueFactory<>("username"));
+        adminEventCoordinatorTableViewName.setCellValueFactory(new PropertyValueFactory<>("username"));
 
-        adminEventMangerTableViewLastname.setCellValueFactory(new PropertyValueFactory<>("name"));
-        adminEventMangerTableView.setItems(eventMangerModel.getAllEventManagers());
+        adminEventCoordinatorTableViewLastname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        adminEventCoordinatorTableView.setItems(eventCoordinatorModel.getAllEventCoordinator());
     }
 
 
     public AdminController() throws IOException {
-        eventMangerModel = new EventMangerModel();
+        eventCoordinatorModel = new EventCoordinatorModel();
     }
 
     /**
      * Makes an ObservableList that will keep track of the EventManger list
      * @return
      */
-    public ObservableList<EventCoordinator> getEventManger() {
-        return (ObservableList<EventCoordinator>) adminEventMangerTableView;
+    public ObservableList<EventCoordinator> getEventCoordinator() {
+        return (ObservableList<EventCoordinator>) adminEventCoordinatorTableView;
     }
 
 
-    public void createEventMangerBtn(ActionEvent event) throws IOException {
-        Stage stage = (Stage) createEventManger.getScene().getWindow();
+    public void createEventCoordinatorBtn(ActionEvent event) throws IOException {
+        Stage stage = (Stage) createEventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/newEventManger.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
 
-    public void editEventMangerBtn(ActionEvent event) {
+    public void editEventCoordinatorBtn(ActionEvent event) {
     }
-
-    public void deletEventMangerBtn(ActionEvent event) {
+    
+    public void deletEventCoordinatorBtn(ActionEvent event) {
         if (SimpleDialogController.delete() && selectedEventCoordinator != null) {
-            eventMangerModel.removeEventManger(selectedEventCoordinator);
+            eventCoordinatorModel.removeEventCoordinator(selectedEventCoordinator);
         }
     }
 
     public void logOutAdminBtn(ActionEvent event) throws IOException {
-        Stage switcher = (Stage) createEventManger.getScene().getWindow();
+        Stage switcher = (Stage) createEventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MainLoginView.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
@@ -111,9 +111,9 @@ public class AdminController implements Initializable {
      * Changes selected Name  in the adminEventMangerTableViewName
      */
     private void setSelectedItems() {
-        if (adminEventMangerTableView.getSelectionModel().getSelectedItem() != null)
+        if (adminEventCoordinatorTableView.getSelectionModel().getSelectedItem() != null)
         {
-            selectedEventCoordinator = adminEventMangerTableView.getSelectionModel().getSelectedItem();
+            selectedEventCoordinator = adminEventCoordinatorTableView.getSelectionModel().getSelectedItem();
         }
 
     }

@@ -8,25 +8,25 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.AdminController">
    <children>
-      <TableView fx:id="adminEventMangerTableView" layoutX="305.0" layoutY="75.0" prefHeight="450.0" prefWidth="550.0">
+      <TableView fx:id="adminEventCoordinatorTableView" layoutX="305.0" layoutY="75.0" prefHeight="450.0" prefWidth="550.0">
          <columns>
-            <TableColumn fx:id="adminEventMangerTableViewName" prefWidth="150.0" text="Name" />
-            <TableColumn fx:id="adminEventMangerTableViewLastname" prefWidth="150.0" text="UserName" />
-            <TableColumn fx:id="adminEventMangerTableViewEmail" prefWidth="150.0" text="E-mail" />
-            <TableColumn fx:id="adminEventMangerTableViewEvents" minWidth="0.0" prefWidth="99.0" text="Events" />
+            <TableColumn fx:id="adminEventCoordinatorTableViewName" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="adminEventCoordinatorTableViewLastname" prefWidth="150.0" text="UserName" />
+            <TableColumn fx:id="adminEventCoordinatorTableViewEmail" prefWidth="150.0" text="E-mail" />
+            <TableColumn fx:id="adminEventMangerCoordinatorViewEvents" minWidth="0.0" prefWidth="99.0" text="Events" />
          </columns>
       </TableView>
-      <JFXButton fx:id="createEventManger" layoutX="49.0" layoutY="126.0" onAction="#createEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create Event Coordinator" textFill="WHITE">
+      <JFXButton fx:id="createEventCoordinator" layoutX="49.0" layoutY="126.0" onAction="#createEventCoordinatorBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create Event Coordinator" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="editEventManger" layoutX="49.0" layoutY="248.0" onAction="#editEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Edit Event Coordinator" textFill="WHITE">
+      <JFXButton fx:id="editEventCoordinator" layoutX="49.0" layoutY="248.0" onAction="#editEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Edit Event Coordinator" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="deletEventManger" layoutX="49.0" layoutY="374.0" onAction="#deletEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Delete Event Coordinator" textFill="WHITE">
+      <JFXButton fx:id="deletEventCoordinator" layoutX="49.0" layoutY="374.0" onAction="#deletEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Delete Event Coordinator" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

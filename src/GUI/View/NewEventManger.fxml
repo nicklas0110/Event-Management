@@ -6,14 +6,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.NewEventMangerController">
+<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.NewEventCoordinatorController">
    <children>
-      <JFXButton fx:id="createEventManger" layoutX="484.0" layoutY="445.0" onAction="#createEventMangerBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
+      <JFXButton fx:id="createEventCoordinator" layoutX="484.0" layoutY="445.0" onAction="#createEventCoordinatorBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="newEventMangerCancel" layoutX="240.0" layoutY="445.0" onAction="#newEventMangerCancelBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Cancel " textFill="WHITE">
+      <JFXButton fx:id="newEventCoordinatorCancel" layoutX="240.0" layoutY="445.0" onAction="#newEventCoordinatorCancelBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Cancel " textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

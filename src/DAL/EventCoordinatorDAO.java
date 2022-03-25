@@ -11,12 +11,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventMangerDAO {
+public class EventCoordinatorDAO {
 
     private DatabaseConnector DC;
 
 
-    public EventMangerDAO() throws IOException {
+    public EventCoordinatorDAO() throws IOException {
         DC = new DatabaseConnector();
     }
 

@@ -1,6 +1,6 @@
 package GUI.controller;
 
-import GUI.Model.EventMangerModel;
+import GUI.Model.EventCoordinatorModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
@@ -12,13 +12,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class NewEventMangerController {
+public class NewEventCoordinatorController {
     public JFXTextArea lastNameInput;
     public JFXTextArea emailInput;
     public JFXTextArea passwordInput;
     public JFXTextArea nameInput;
     public JFXTextArea userNameInput;
-    public JFXButton newEventMangerCancel;
+    public JFXButton newEventCoordinatorCancel;
 
 
 
@@ -31,27 +31,27 @@ public class NewEventMangerController {
      * @throws IOException
      * @throws SQLException
      */
-    public void uploadEventMangerInfo(String userName, String password, String name) throws Exception {
-        EventMangerModel privateMovieCollectionModel = new EventMangerModel();
+    public void uploadEventCoordinatorInfo(String userName, String password, String name) throws Exception {
+        EventCoordinatorModel privateMovieCollectionModel = new EventCoordinatorModel();
 
-        privateMovieCollectionModel.addEventManger(userName, password, name);
+        privateMovieCollectionModel.addEventCoordinator(userName, password, name);
     }
 
-    public void createEventMangerBtn(ActionEvent actionEvent) throws Exception {
+    public void createEventCoordinatorBtn(ActionEvent actionEvent) throws Exception {
         String uploadUserName = userNameInput.getText().replaceAll(" ","");
         String uploadpassword = passwordInput.getText().replaceAll(" ","");
         String uploadName = nameInput.getText().replaceAll(" ","");
-        uploadEventMangerInfo(uploadUserName, uploadpassword, uploadName);
+        uploadEventCoordinatorInfo(uploadUserName, uploadpassword, uploadName);
 
-        Stage stage = (Stage) newEventMangerCancel.getScene().getWindow();
+        Stage stage = (Stage) newEventCoordinatorCancel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
 
-    public void newEventMangerCancelBtn(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) newEventMangerCancel.getScene().getWindow();
+    public void newEventCoordinatorCancelBtn(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) newEventCoordinatorCancel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
