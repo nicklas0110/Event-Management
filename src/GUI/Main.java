@@ -15,6 +15,7 @@ public class Main extends Application {
         primaryStage.setTitle("Log in Event Management");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     
