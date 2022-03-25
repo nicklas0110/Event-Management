@@ -18,34 +18,49 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXTextArea fx:id="lastNameInput" layoutX="222.0" layoutY="280.0" prefHeight="36.0" prefWidth="469.0" />
-      <JFXTextArea fx:id="emailInput" layoutX="222.0" layoutY="352.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea fx:id="passwordInput" layoutX="226.0" layoutY="135.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea fx:id="nameInput" layoutX="226.0" layoutY="208.0" prefHeight="26.0" prefWidth="469.0" />
-      <JFXTextArea fx:id="userNameInput" layoutX="226.0" layoutY="63.0" prefHeight="26.0" prefWidth="469.0" />
-      <Text layoutX="152.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+      <JFXTextArea fx:id="lastNameInput" layoutX="224.0" layoutY="273.0" prefHeight="36.0" prefWidth="469.0">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font size="16.0" />
+         </font></JFXTextArea>
+      <JFXTextArea fx:id="emailInput" layoutX="224.0" layoutY="345.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextArea>
+      <JFXTextArea fx:id="passwordInput" layoutX="228.0" layoutY="128.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextArea>
+      <JFXTextArea fx:id="nameInput" layoutX="228.0" layoutY="201.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextArea>
+      <JFXTextArea fx:id="userNameInput" layoutX="228.0" layoutY="56.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextArea>
+      <Text layoutX="145.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="152.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:">
+      <Text layoutX="145.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="152.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+      <Text layoutX="145.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="156.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+      <Text layoutX="149.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="153.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName:">
+      <Text layoutX="146.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName:">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
    </children>
