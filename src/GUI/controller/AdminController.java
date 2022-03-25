@@ -85,7 +85,7 @@ public class AdminController implements Initializable {
     public void createEventMangerBtn(ActionEvent event) throws IOException {
         Stage stage = (Stage) createEventManger.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/newEventManger.fxml"));
-        stage.setTitle("Customer");
+        stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }

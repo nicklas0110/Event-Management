@@ -20,6 +20,8 @@ public class NewEventMangerController {
     public JFXTextArea userNameInput;
     public JFXButton newEventMangerCancel;
 
+
+
     /**
      * her uploades vores data til vores model layer, dataen får den fra LogicManger.
      *
@@ -36,14 +38,14 @@ public class NewEventMangerController {
     }
 
     public void createEventMangerBtn(ActionEvent actionEvent) throws Exception {
-        String uploadUserName = userNameInput.getText();
-        String uploadpassword = passwordInput.getText();
-        String uploadName = nameInput.getText();
+        String uploadUserName = userNameInput.getText().replaceAll(" ","");
+        String uploadpassword = passwordInput.getText().replaceAll(" ","");
+        String uploadName = nameInput.getText().replaceAll(" ","");
         uploadEventMangerInfo(uploadUserName, uploadpassword, uploadName);
 
         Stage stage = (Stage) newEventMangerCancel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
-        stage.setTitle("Customer");
+        stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
@@ -51,7 +53,7 @@ public class NewEventMangerController {
     public void newEventMangerCancelBtn(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) newEventMangerCancel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
-        stage.setTitle("Customer");
+        stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
