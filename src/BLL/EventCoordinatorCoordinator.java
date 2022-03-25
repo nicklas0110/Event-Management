@@ -9,33 +9,33 @@ import javafx.collections.ObservableList;
 
 import java.io.IOException;
 
-public class EventCoordinatorManager {
+public class EventCoordinatorCoordinator {
     EventCoordinatorDAO eventCoordinatorDAO = new EventCoordinatorDAO();
 
     private StringProperty userName = new SimpleStringProperty();
     private StringProperty name = new SimpleStringProperty();
 
-    public EventCoordinatorManager() throws IOException {
+    public EventCoordinatorCoordinator() throws IOException {
     }
 
     // here we create a movie with the input from the gui, sending it to Dal.
-    public EventCoordinator addEventManger(String userName, String password, String name) throws Exception
+    public EventCoordinator addEventCoordinator(String userName, String password, String name) throws Exception
     {
-        return (eventCoordinatorDAO.addEventManger(userName, password, name));
+        return (eventCoordinatorDAO.addEventCoordinator(userName, password, name));
     }
 
-    public ObservableList<EventCoordinator> getAllEventManagers() {
+    public ObservableList<EventCoordinator> getAllEventCoordinators() {
         ObservableList<EventCoordinator> eventObs = FXCollections.observableArrayList();
 
         try {
-            eventObs.addAll(eventCoordinatorDAO.getAllEventManagers());
+            eventObs.addAll(eventCoordinatorDAO.getAllEventCoordinators());
         } catch (Exception e) {
             e.printStackTrace();
         }
         return eventObs;
     }
 
-    public void removeEventManger(EventCoordinator selectedEventCoordinator) {
-        eventCoordinatorDAO.removeEventManger(selectedEventCoordinator);
+    public void removeEventCoordinator(EventCoordinator selectedEventCoordinator) {
+        eventCoordinatorDAO.removeEventCoordinator(selectedEventCoordinator);
     }
 }

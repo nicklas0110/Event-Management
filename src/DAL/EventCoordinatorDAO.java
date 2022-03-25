@@ -22,7 +22,7 @@ public class EventCoordinatorDAO {
 
 
     // This is the method to create a movie in the Database. This is also where the movie gets an ID.
-    public EventCoordinator addEventManger(String userName, String password, String name) throws Exception {
+    public EventCoordinator addEventCoordinator(String userName, String password, String name) throws Exception {
         Connection con = DC.getConnection();
 
 
@@ -45,7 +45,7 @@ public class EventCoordinatorDAO {
         return null;
     }
 
-    public List<EventCoordinator> getAllEventManagers() throws Exception {
+    public List<EventCoordinator> getAllEventCoordinators() throws Exception {
         Connection con = DC.getConnection();
 
         List<EventCoordinator> allCoordinators = new ArrayList<>();
@@ -61,7 +61,7 @@ public class EventCoordinatorDAO {
         return allCoordinators;
     }
 
-    public void removeEventManger(EventCoordinator selectedEventCoordinator) {
+    public void removeEventCoordinator(EventCoordinator selectedEventCoordinator) {
         String sql1 = "DELETE FROM UserTable WHERE UserID = (?);";
 
         try (Connection connection = DC.getConnection()) {
