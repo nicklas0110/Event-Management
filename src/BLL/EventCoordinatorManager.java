@@ -37,4 +37,8 @@ public class EventCoordinatorManager {
         }
         return eventObs;
     }
+
+    public void removeEventManger(EventCoordinator selectedEventCoordinator) {
+        eventMangerDAO.removeEventManger(selectedEventCoordinator);
+    }
 }

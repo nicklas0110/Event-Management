@@ -3,13 +3,11 @@ package DAL;
 import BE.Event;
 import BE.EventCoordinator;
 import DAL.db.DatabaseConnector;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,16 +16,13 @@ public class EventMangerDAO {
     private DatabaseConnector DC;
 
 
-    public EventMangerDAO() throws IOException
-    {
+    public EventMangerDAO() throws IOException {
         DC = new DatabaseConnector();
     }
 
 
-
     // This is the method to create a movie in the Database. This is also where the movie gets an ID.
-    public EventCoordinator addEventManger(String userName, String password, String name) throws Exception
-    {
+    public EventCoordinator addEventManger(String userName, String password, String name) throws Exception {
         Connection con = DC.getConnection();
 
 
@@ -38,11 +33,9 @@ public class EventMangerDAO {
         ps.setString(3, "EventCoordinator");
         ps.setString(4, name);
         int affectedRows = ps.executeUpdate();
-        if (affectedRows == 1)
-        {
+        if (affectedRows == 1) {
             ResultSet rs = ps.getGeneratedKeys();
-            if (rs.next())
-            {
+            if (rs.next()) {
                 int id = rs.getInt(1);
                 EventCoordinator eventCord = new EventCoordinator(id, userName, name);
                 return eventCord;
@@ -62,9 +55,26 @@ public class EventMangerDAO {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) { // Creates and adds song objects into an array list
-            EventCoordinator eventCord = new EventCoordinator(rs.getInt("UserID"),rs.getString("UserName"),rs.getString("name"));
+            EventCoordinator eventCord = new EventCoordinator(rs.getInt("UserID"), rs.getString("UserName"), rs.getString("name"));
             allCoordinators.add(eventCord);
         }
         return allCoordinators;
+    }
+
+    public void removeEventManger(EventCoordinator selectedEventCoordinator) {
+        String sql1 = "DELETE FROM UserTable WHERE UserID = (?);";
+
+        try (Connection connection = DC.getConnection()) {
+            PreparedStatement ps1 = connection.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
+
+            ps1.setInt(1, selectedEventCoordinator.getId());
+
+            ps1.executeUpdate();
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

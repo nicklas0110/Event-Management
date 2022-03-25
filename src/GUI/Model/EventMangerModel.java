@@ -43,4 +43,9 @@ public class EventMangerModel {
     public void addEventManger(String userName, String password, String name) throws Exception {
         eventManagerList.add(eventCEventCoordinator.addEventManger(userName, password, name));
     }
+
+    public void removeEventManger(EventCoordinator selectedEventCoordinator) {
+        eventCEventCoordinator.removeEventManger(selectedEventCoordinator);
+        eventManagerList.remove(selectedEventCoordinator);
+    }
 }

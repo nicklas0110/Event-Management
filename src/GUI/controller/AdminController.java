@@ -94,6 +94,9 @@ public class AdminController implements Initializable {
     }
 
     public void deletEventMangerBtn(ActionEvent event) {
+        if (SimpleDialogController.delete() && selectedEventCoordinator != null) {
+            eventMangerModel.removeEventManger(selectedEventCoordinator);
+        }
     }
 
     public void logOutAdminBtn(ActionEvent event) throws IOException {
