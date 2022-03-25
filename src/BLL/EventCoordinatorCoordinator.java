@@ -18,7 +18,7 @@ public class EventCoordinatorCoordinator {
     public EventCoordinatorCoordinator() throws IOException {
     }
 
-    // here we create a movie with the input from the gui, sending it to Dal.
+    // here we create a EventCoordinator with the input from the gui, sending it to Dal.
     public EventCoordinator addEventCoordinator(String userName, String password, String name) throws Exception
     {
         return (eventCoordinatorDAO.addEventCoordinator(userName, password, name));
