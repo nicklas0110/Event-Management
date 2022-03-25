@@ -2,15 +2,12 @@ package BLL;
 
 import BE.EventCoordinator;
 import DAL.EventMangerDAO;
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
-import java.util.*;
 
 public class EventCoordinatorManager {
     EventMangerDAO eventMangerDAO = new EventMangerDAO();
