@@ -1,15 +1,15 @@
 #BilletView{
-    -fx-background-color: radial-gradient(focus-angle 12deg, focus-distance 0%, center 40% 40%, radius 110%, rgb(252, 173, 151) 40%, rgb(198, 178, 8) 110%);
+    -fx-background-color: radial-gradient(focus-angle 30deg, focus-distance 0%, center 60% 60%, radius 100%, rgb(215, 100, 254) 40%, rgb(0, 203, 214) 100%);
 }
 
 #tableView{
-    -fx-background-color: FCAD97FF;
-    -fx-border-color: #543f3f;
- }
+    -fx-background-color: white;
+  }
 
-#eventColumnView,#datoColumnView,#timeColumnView,#emailColumnView{
-    -fx-border-color: #543f3f;
+#eventColumnView,#datoColumnView,#timeColumnView,#emailColumnView,#ticketHolderColumnView{
+    -fx-border-color: white;
     -fx-border-width: 1;
-    -fx-background-color: #C6B208FF;
+    -fx-background-color: #00CBD6FF;
+
 
 }
