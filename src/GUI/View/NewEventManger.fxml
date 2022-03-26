@@ -48,7 +48,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="145.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+      <Text layoutX="145.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName:">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>

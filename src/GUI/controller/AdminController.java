@@ -92,7 +92,6 @@ public class AdminController implements Initializable {
 
     public void editEventCoordinatorBtn(ActionEvent event) {
     }
-    
     public void deletEventCoordinatorBtn(ActionEvent event) {
         if (SimpleDialogController.delete() && selectedEventCoordinator != null) {
             eventCoordinatorModel.removeEventCoordinator(selectedEventCoordinator);
