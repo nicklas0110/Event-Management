@@ -11,11 +11,21 @@ public class Event {
 
     public Event(int eventId, String eventName, String eventDato, String eventTime, String eventLocation, String eventInfo) {
         this.eventId = eventId;
-        EventName = eventName;
-        EventDato = eventDato;
-        EventTime = eventTime;
-        EventLocation = eventLocation;
-        EventInfo = eventInfo;
+        this.EventName = eventName;
+        this.EventDato = eventDato;
+        this.EventTime = eventTime;
+        this.EventLocation = eventLocation;
+        this.EventInfo = eventInfo;
+
+    }
+    
+    
+
+    public Event() {
+
+    }
+
+    public Event(String eventName, String eventDate, String eventTime, String eventLocation, String eventInfo) {
     }
 
     public int getEventId() {
@@ -42,6 +52,10 @@ public class Event {
         EventDato = eventDato;
     }
 
+    public void setEventDate(String eventDate) {
+        this.EventDato = eventDate;
+    }
+
     public String getEventTime() {
         return EventTime;
     }
@@ -65,4 +79,6 @@ public class Event {
     public void setEventInfo(String eventInfo) {
         EventInfo = eventInfo;
     }
+
+
 }

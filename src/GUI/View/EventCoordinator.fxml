@@ -2,6 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -9,37 +12,43 @@
 
 <AnchorPane prefHeight="595.0" prefWidth="599.0" stylesheets="@stylesheet/eventCoordinator.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EventCoordinatorController">
    <children>
-      <Pane fx:id="paneEventC" prefHeight="116.0" prefWidth="658.0" />
-      <Pane layoutX="55.0" layoutY="162.0" prefHeight="134.0" prefWidth="560.0" style="-fx-border-color: #543f3f;" />
-      <Pane layoutX="55.0" layoutY="313.0" prefHeight="134.0" prefWidth="560.0" style="-fx-border-color: #543f3f;" />
-      <JFXButton fx:id="btnLogOuteventCoordinator" buttonType="RAISED" layoutX="496.0" layoutY="530.0" onAction="#ButtonLogOutFromEventCoordinator" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Log out">
+      <Pane fx:id="paneEventC" prefHeight="132.0" prefWidth="739.0">
+         <children>
+            <Text fx:id="eventTitle" fill="WHITE" fontSmoothingType="LCD" layoutX="9.0" layoutY="77.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Coordinator" textAlignment="CENTER" wrappingWidth="721.7999267578125">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <TableView fx:id="tvEvents" layoutY="130.0" prefHeight="398.0" prefWidth="739.0" style="-fx-background-color: Transparent; -fx-border-color: #ffe72f;">
+         <columns>
+            <TableColumn fx:id="tcId" prefWidth="75.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="ID" />
+            <TableColumn fx:id="tcEventName" prefWidth="134.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Event" />
+            <TableColumn fx:id="tcEventDate" prefWidth="125.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Date" />
+            <TableColumn fx:id="tcEventTime" prefWidth="96.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Start" />
+            <TableColumn fx:id="tcEventLocation" prefWidth="129.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Location" />
+            <TableColumn fx:id="tcEventInfo" prefWidth="177.5999633789063" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Info" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <JFXButton fx:id="btnLogOuteventCoordinator" buttonType="RAISED" layoutX="606.0" layoutY="548.0" onAction="#ButtonLogOutFromEventCoordinator" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Log out">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton fx:id="btnAddEventkoordinator" buttonType="RAISED" layoutX="55.0" layoutY="485.0" onAction="#addEventActionButton" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="Add event" textFill="WHITE">
+      <JFXButton fx:id="btnAddEvent" buttonType="RAISED" layoutX="34.0" layoutY="548.0" onAction="#onActionAddEvent" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="Add event" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton fx:id="btnEditEventKoordinator" buttonType="RAISED" layoutX="216.0" layoutY="485.0" onAction="#EditEventActionButton" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-background-color: #00CBD6;" text="Edit Event" textFill="WHITE">
+      <JFXButton fx:id="btnEditEvent" buttonType="RAISED" layoutX="169.0" layoutY="548.0" onAction="#onActionEditEvent" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-background-color: #00CBD6;" text="Edit Event" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <Text fx:id="eventTitle" fill="#ffe72f" fontSmoothingType="LCD" layoutY="66.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Coordinator" textAlignment="CENTER" wrappingWidth="657.0">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Text>
-      <Text layoutX="149.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title of event" wrappingWidth="201.4742431640625">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="149.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="information about event.information about event.information about event.information about event.information about event.information about event.information about event.information about event." wrappingWidth="410.2741394042969" />
-      <Text layoutX="149.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title of event" wrappingWidth="201.4742431640625">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="149.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="information about event.information about event.information about event.information about event.information about event.information about event.information about event.information about event." wrappingWidth="449.4740905761719" />
+      <JFXButton fx:id="btnDeleteEvent" buttonType="RAISED" layoutX="301.0" layoutY="548.0" onAction="#handleBtnDeleteEvent" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-background-color: #00CBD6;" text="Delete Event" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

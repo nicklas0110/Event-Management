@@ -58,6 +58,4 @@ public class NewEventCoordinatorController {
         stage.setScene(scene);
     }
 
-
-
 }
