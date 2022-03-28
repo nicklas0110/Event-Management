@@ -60,7 +60,8 @@ public class EventManager {
     public static void editEvent(Event event) {
     }
 
-    public Event addEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
+    //create event in eventMannager
+    public Event createEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
         return (eventDAO.addEvent(event,start,eventTime,location,eventInfo));
     }
 
