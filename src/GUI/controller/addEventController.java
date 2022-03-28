@@ -1,12 +1,9 @@
 package GUI.controller;
 
 import GUI.Model.EventModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -31,11 +28,13 @@ public class addEventController {
         this.eventModel = new EventModel();
     }
 
-    public void onActionSaveEvent() throws SQLException {
+    public void onActionSaveEvent() throws Exception {
         String eventName = txtFieldEventName.getText();
         String eventDate = txtFieldEventDate.getText();
         String eventTime = txtFieldEventTime.getText();
         String eventLocation = txtFieldEventLocation.getText();
+
+        uploadEventInfo(eventName,eventDate,eventTime,eventLocation);
 
         /*
         eventModel.createEvent(eventName, eventDate, eventTime, eventLocation);
@@ -50,4 +49,15 @@ public class addEventController {
 
          */
     }
+
+
+    public void uploadEventInfo(String String Event, String start, String Location) throws Exception {
+        EventModel eventModelInfo = new EventModel();
+
+        eventModelInfo.addEvent(Event, start, Location);
+    }
+
+
+
+
 }

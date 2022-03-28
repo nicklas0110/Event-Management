@@ -15,6 +15,11 @@ public class EventModel {
         eventManager = new EventManager();
     }
 
+    public static void addEvent(String id, String event, Double date, String start, String location) {
+
+
+    }
+
     public void editEvent(Event event) {
         EventManager.editEvent(event);
     }
