@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -34,7 +35,7 @@
       </Pane>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
          <children>
-            <Pane fx:id="pane" prefHeight="121.0" prefWidth="408.0">
+            <Pane prefHeight="121.0" prefWidth="408.0">
                <children>
                   <Text fx:id="titleView" fill="#ffe539" layoutX="-2.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Management" textAlignment="CENTER" wrappingWidth="410.0000000000001">
                      <font>
@@ -52,7 +53,7 @@
                   </VBox>
                   <VBox layoutX="86.0" layoutY="113.0" prefHeight="26.0" prefWidth="251.0">
                      <children>
-                        <TextField fx:id="PasswordField" prefHeight="55.0" prefWidth="251.0" promptText="Password" />
+                        <PasswordField fx:id="PasswordField" promptText="Password" />
                      </children>
                   </VBox>
                   <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="86.0" layoutY="192.0" onAction="#LogInAction" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #00CBD6;" textFill="WHITE" />
