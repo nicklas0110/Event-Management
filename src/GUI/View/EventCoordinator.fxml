@@ -50,5 +50,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXButton fx:id="btnUserInfo" buttonType="RAISED" layoutX="438.0" layoutY="548.0" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-background-color: #00CBD6;" text="User Information" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

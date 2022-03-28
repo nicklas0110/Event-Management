@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -44,24 +43,24 @@
                   </Text>
                </children>
             </Pane>
-            <VBox prefHeight="257.0" prefWidth="344.0">
+            <Pane prefHeight="275.0" prefWidth="408.0">
                <children>
-                  <Pane prefHeight="253.0" prefWidth="344.0">
+                  <VBox layoutX="86.0" layoutY="59.0" prefHeight="26.0" prefWidth="251.0">
                      <children>
-                        <FontAwesomeIconView fx:id="LockIkon" fill="#543f3f" glyphName="LOCK" layoutX="62.0" layoutY="123.0" selectionEnd="1" size="25" text="" />
-                        <PasswordField fx:id="PasswordField" layoutX="94.0" layoutY="95.0" prefHeight="36.0" prefWidth="252.0" promptText="Password" />
-                        <FontAwesomeIconView fx:id="userIkon" fill="#543f3f" glyphName="USER" layoutX="63.0" layoutY="57.0" selectionEnd="1" selectionFill="#543f3f" size="25" text="" wrappingWidth="14.142857551574707" />
-                        <TextField fx:id="UserNameField" layoutX="94.0" layoutY="31.0" prefHeight="36.0" prefWidth="252.0" promptText="User name" />
-                        <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="94.0" layoutY="183.0" onAction="#LogInAction" prefHeight="36.0" prefWidth="252.0" ripplerFill="WHITE" style="-fx-background-color: #00CBD6;" text="Log in" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </JFXButton>
-                        <CheckBox fx:id="check" layoutX="95.0" layoutY="149.0" mnemonicParsing="false" onAction="#saveLogin" text="Remember me" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" />
+                        <TextField fx:id="UserNameField" prefHeight="61.0" prefWidth="251.0" promptText="User name" />
                      </children>
-                  </Pane>
+                  </VBox>
+                  <VBox layoutX="86.0" layoutY="113.0" prefHeight="26.0" prefWidth="251.0">
+                     <children>
+                        <TextField fx:id="PasswordField" prefHeight="55.0" prefWidth="251.0" promptText="Password" />
+                     </children>
+                  </VBox>
+                  <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="86.0" layoutY="192.0" onAction="#LogInAction" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #00CBD6;" textFill="WHITE" />
+                  <FontAwesomeIconView fx:id="LockIkon" fill="#543f3f" glyphName="LOCK" layoutX="53.0" layoutY="135.0" selectionEnd="1" size="25" text="" />
+                  <FontAwesomeIconView fx:id="userIkon" fill="#543f3f" glyphName="USER" layoutX="52.0" layoutY="81.0" selectionEnd="1" selectionFill="#543f3f" size="25" text="" wrappingWidth="14.142857551574707" />
+                  <CheckBox layoutX="86.0" layoutY="160.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="115.0" text="Remember Me !" />
                </children>
-            </VBox>
+            </Pane>
          </children>
       </VBox>
    </children>
