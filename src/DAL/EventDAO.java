@@ -25,7 +25,7 @@ public class EventDAO {
     public Event addEvent(String event, String start, String eventTime, String location, String eventinfo) throws SQLException {
         Connection connection = DC.getConnection();
 
-        String sql = "INSERT INTO EventTable (EventName,EventManager,EventTime,EventLocation,EventNotes) VALUES (?,?,?,?,?,?);";
+        String sql = "INSERT INTO EventTable (EventName,EventDato,EventTime,EventLocation,EventNotes,event) VALUES (?,?,?,?,?,?);";
         PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, event);
         ps.setString(2, start);
