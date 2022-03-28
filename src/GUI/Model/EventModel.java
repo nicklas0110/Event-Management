@@ -1,6 +1,7 @@
 package GUI.Model;
 
 import BE.Event;
+import BE.EventCoordinator;
 import BLL.EventManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,6 +27,20 @@ public class EventModel {
 
     public void editEvent(Event event) {
     }
+
+    public ObservableList<Event> getAllEvents() throws IOException {
+       eventList = eventManager.getAllEvents();
+       return eventList;
+    }
+
+    public void removeEvent(Event selectedEvent) {
+        eventManager.removeEvent(selectedEvent);
+        eventList.remove(selectedEvent);
+    }
+
+
+
+
 
     /*
     public List<Event> getEvents() {

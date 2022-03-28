@@ -1,8 +1,11 @@
 package BLL;
 
 import BE.Event;
+import BE.EventCoordinator;
 import DAL.EventDAO;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -59,5 +62,20 @@ public class EventManager {
 
     public Event addEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
         return (eventDAO.addEvent(event,start,eventTime,location,eventInfo));
+    }
+
+    public void removeEvent(Event selectedEvent) {
+        eventDAO.removeEvent(selectedEvent);
+    }
+
+    public ObservableList<Event> getAllEvents() {
+        ObservableList<Event> eventObs = FXCollections.observableArrayList();
+
+        try {
+            eventObs.addAll(eventDAO.getAllEvents());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return eventObs;
     }
 }

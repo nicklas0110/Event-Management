@@ -64,4 +64,6 @@ public class EditEventController {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
     }
+
+
 }

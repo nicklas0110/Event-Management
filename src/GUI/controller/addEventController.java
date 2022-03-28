@@ -3,9 +3,13 @@ package GUI.controller;
 import GUI.Model.EventModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -38,6 +42,12 @@ public class addEventController {
         String eventInfoText = txtFieldEventInfo.getText();
 
         uploadEventInfo(eventName,eventDate,eventTime,eventLocation,eventInfoText);
+
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinator.fxml"));
+        stage.setTitle("AdminView");
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
 
         /*
         eventModel.createEvent(eventName, eventDate, eventTime, eventLocation);

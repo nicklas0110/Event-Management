@@ -65,6 +65,7 @@ public class AdminController implements Initializable {
         adminEventCoordinatorTableViewName.setCellValueFactory(new PropertyValueFactory<>("username"));
 
         adminEventCoordinatorTableViewLastname.setCellValueFactory(new PropertyValueFactory<>("name"));
+
         adminEventCoordinatorTableView.setItems(eventCoordinatorModel.getAllEventCoordinator());
     }
 

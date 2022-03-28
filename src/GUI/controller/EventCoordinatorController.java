@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,21 +23,21 @@ import java.net.URL;
 
  //remember implements Initializable this class
 
-public class EventCoordinatorController  {
+public class EventCoordinatorController  implements Initializable   {
     @FXML
-    public TableView tvEvents;
+    public TableView<Event> tvEvents;
     @FXML
-    public TableColumn tcId;
+    public TableColumn<Event, String> tcId;
     @FXML
-    public TableColumn tcEventName;
+    public TableColumn<Event, String> tcEventName;
     @FXML
-    public TableColumn tcEventDate;
+    public TableColumn<Event, String> tcEventDate;
     @FXML
-    public TableColumn tcEventTime;
+    public TableColumn<Event, String> tcEventTime;
     @FXML
-    public TableColumn tcEventLocation;
+    public TableColumn<Event, String> tcEventLocation;
     @FXML
-    public TableColumn tcEventInfo;
+    public TableColumn<Event, String> tcEventInfo;
     @FXML
     public JFXButton btnAddEvent;
     @FXML
@@ -61,24 +62,29 @@ public class EventCoordinatorController  {
     private EditEventController editEventController;
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        try {
+            setEventTableView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        tvEvents.setOnMouseClicked((MouseEvent event) -> {
+            setSelectedItems();
+        });
+    }
+
+
     public EventCoordinatorController() throws IOException {
         this.eventCoordinatorModel = new EventCoordinatorModel();
         this.eventModel = new EventModel();
-        //this.selectedEvent = new Event();
         this.editEventController = new EditEventController();
     }
 
 
-
-    private void tableViewLoadEvents(ObservableList<Event> allEvents) {
-        tvEvents.setItems(getEventData());
-    }
-
-    private ObservableList<Event> getEventData() {
-        return allEvents;
-    }
-
-    private ObservableList<Event> allEvents = FXCollections.observableArrayList();
     public void ButtonLogOutFromEventCoordinator(ActionEvent actionEvent) throws IOException {
 
         Stage switcher = (Stage) btnLogOuteventCoordinator.getScene().getWindow();
@@ -126,11 +132,29 @@ public class EventCoordinatorController  {
         });
     }
 
+    /**m
+     * Method used for initializing the EventCoordinator table.
+     */
+    private void setEventTableView() throws IOException {
+
+        tcId.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+
+        tcEventName.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+
+        tcEventDate.setCellValueFactory(new PropertyValueFactory<>("eventDato"));
+
+        tcEventTime.setCellValueFactory(new PropertyValueFactory<>("eventTime"));
+
+        tcEventLocation.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
+
+        tvEvents.setItems(eventModel.getAllEvents());
+    }
 
 
 
 
-    public void onActionEditEvent() throws IOException {
+
+    public void onActionEditEvent()  {
          if (selectedEvent != null) {
             Event selectedEvent = (Event) tvEvents.getSelectionModel().getSelectedItem();
 
@@ -149,15 +173,6 @@ public class EventCoordinatorController  {
             editEventStage.show();
             editEventStage.setOnHiding(event ->
             {
-                /*
-                try {
-                    allEvents = FXCollections.observableList(eventModel.getEvents());
-                    tableViewLoadEvents(allEvents);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                 */
             });
         }
     }
@@ -169,6 +184,25 @@ public class EventCoordinatorController  {
             }
         }));
     }
+
+    public void handleBtnDeleteEvent(ActionEvent event) {
+        if (SimpleDialogController.delete() && selectedEvent != null) {
+            eventModel.removeEvent(selectedEvent);
+        }
+
+    }
+    /**
+     * Changes selected Name  in the adminEventMangerTableViewName
+     */
+    private void setSelectedItems() {
+        if (tvEvents.getSelectionModel().getSelectedItem() != null)
+        {
+            selectedEvent = tvEvents.getSelectionModel().getSelectedItem();
+        }
+
+    }
+
+
 
 /*
     @Override
