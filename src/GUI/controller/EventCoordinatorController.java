@@ -64,7 +64,7 @@ public class EventCoordinatorController  {
     public EventCoordinatorController() throws IOException {
         this.eventCoordinatorModel = new EventCoordinatorModel();
         this.eventModel = new EventModel();
-        this.selectedEvent = new Event();
+        //this.selectedEvent = new Event();
         this.editEventController = new EditEventController();
     }
 

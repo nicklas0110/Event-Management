@@ -46,8 +46,8 @@ public class EditEventController {
         String eventInfo = txtFieldEventInfo.getText();
 
 
-        Event event = new Event(eventName, eventDate, eventTime, eventLocation, eventInfo);
-        eventModel.editEvent(event);
+        //Event event = new Event(eventName, eventDate, eventTime, eventLocation, eventInfo);
+        //eventModel.editEvent(event);
 
         Stage stage = (Stage) btnEditEvent.getScene().getWindow();
         stage.close();
