@@ -13,17 +13,17 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.addEventController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="75.0" prefWidth="606.0" style="-fx-background-color: ffe72f;" />
-      <Text layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #ffe72f;" text="Create New Event" textAlignment="CENTER" wrappingWidth="606.0">
+      <Pane layoutY="-2.0" prefHeight="75.0" prefWidth="606.0" style="-fx-background-color: D764FEFF;" />
+      <Text fill="WHITE" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #ffe72f;" text="Create New Event" textAlignment="CENTER" wrappingWidth="606.0">
          <font>
             <Font name="Berlin Sans FB" size="34.0" />
          </font>
       </Text>
       <TextField fx:id="txtFieldEventName" layoutX="218.0" layoutY="120.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="38.0" prefWidth="314.0" promptText="Event Name" style="-fx-border-color: white;">
          <effect>
-            <DropShadow height="17.28" radius="6.75" width="11.72">
+            <DropShadow height="14.5" radius="6.055" width="11.72">
                <color>
-                  <Color red="1.0" green="0.9058823585510254" blue="0.18431372940540314" />
+                  <Color red="0.843137264251709" green="0.3921568691730499" blue="0.9960784316062927" />
                </color>
             </DropShadow>
          </effect>
@@ -33,9 +33,9 @@
       </TextField>
       <TextField fx:id="txtFieldEventDate" layoutX="218.0" layoutY="169.0" prefHeight="38.0" prefWidth="314.0" promptText="DD.MM-YYYY" style="-fx-border-color: white;">
          <effect>
-            <DropShadow height="17.28" radius="6.75" width="11.72">
+            <DropShadow height="14.5" radius="6.055" width="11.72">
                <color>
-                  <Color red="1.0" green="0.9058823585510254" blue="0.18431372940540314" />
+                  <Color red="0.843137264251709" green="0.3921568691730499" blue="0.9960784316062927" />
                </color>
             </DropShadow>
          </effect>
@@ -45,9 +45,9 @@
       </TextField>
       <TextField fx:id="txtFieldEventTime" layoutX="218.0" layoutY="220.0" prefHeight="38.0" prefWidth="314.0" promptText="Event Time" style="-fx-border-color: white;">
          <effect>
-            <DropShadow height="17.28" radius="6.75" width="11.72">
+            <DropShadow height="14.5" radius="6.055" width="11.72">
                <color>
-                  <Color red="1.0" green="0.9058823585510254" blue="0.18431372940540314" />
+                  <Color red="0.843137264251709" green="0.3921568691730499" blue="0.9960784316062927" />
                </color>
             </DropShadow>
          </effect>
@@ -57,9 +57,9 @@
       </TextField>
       <TextField fx:id="txtFieldEventLocation" layoutX="218.0" layoutY="272.0" prefHeight="38.0" prefWidth="314.0" promptText="Event location" style="-fx-border-color: white;">
          <effect>
-            <DropShadow height="17.28" radius="6.75" width="11.72">
+            <DropShadow height="14.5" radius="6.055" width="11.72">
                <color>
-                  <Color red="1.0" green="0.9058823585510254" blue="0.18431372940540314" />
+                  <Color red="0.843137264251709" green="0.3921568691730499" blue="0.9960784316062927" />
                </color>
             </DropShadow>
          </effect>
@@ -91,12 +91,25 @@
          <effect>
             <DropShadow height="0.0" radius="3.58" width="16.32" />
          </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
       <Button fx:id="btnBack" layoutX="250.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleBtnBack" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="Back" textFill="WHITE">
          <effect>
             <DropShadow height="0.0" radius="3.58" width="16.32" />
          </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
-      <TextArea fx:id="txtFieldEventInfo" layoutX="75.0" layoutY="329.0" prefHeight="97.0" prefWidth="464.0" promptText="Write information about the event" style="-fx-border-color: #ffe72f;" />
+      <TextArea fx:id="txtFieldEventInfo" layoutX="75.0" layoutY="329.0" prefHeight="98.0" prefWidth="460.0" promptText="Write information about the event" style="-fx-border-color: #ffe72f;">
+         <effect>
+            <DropShadow height="14.5" radius="6.055" width="11.72">
+               <color>
+                  <Color red="0.843137264251709" green="0.3921568691730499" blue="0.9960784316062927" />
+               </color>
+            </DropShadow>
+         </effect></TextArea>
    </children>
 </AnchorPane>

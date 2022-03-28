@@ -22,7 +22,7 @@ public class EventModel {
 
 
     public void addEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
-        eventList.add(eventManager.addEvent(event, start, eventTime, location, eventInfo));
+        eventList.add(eventManager.createEvent(event, start, eventTime, location, eventInfo));
      }
 
     public void editEvent(Event event) {
