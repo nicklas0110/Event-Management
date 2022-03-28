@@ -2,6 +2,7 @@ package BLL;
 
 import BE.Event;
 import DAL.EventDAO;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -56,4 +57,7 @@ public class EventManager {
     public static void editEvent(Event event) {
     }
 
+    public Event addEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
+        return (eventDAO.addEvent(event,start,eventTime,location,eventInfo));
+    }
 }

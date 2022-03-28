@@ -2,26 +2,29 @@ package GUI.Model;
 
 import BE.Event;
 import BLL.EventManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
 
 public class EventModel {
 
-    private final EventManager eventManager;
+    private ObservableList<Event> eventList = FXCollections.observableArrayList();
+
+    private EventManager eventManager;
 
 
     public EventModel() throws IOException {
         eventManager = new EventManager();
     }
 
-    public static void addEvent(String id, String event, Double date, String start, String location) {
 
-
-    }
+    public void addEvent(String event, String start, String eventTime, String location, String eventInfo) throws SQLException {
+        eventList.add(eventManager.addEvent(event, start, eventTime, location, eventInfo));
+     }
 
     public void editEvent(Event event) {
-        EventManager.editEvent(event);
     }
 
     /*

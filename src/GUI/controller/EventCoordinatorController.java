@@ -60,12 +60,15 @@ public class EventCoordinatorController  {
     private Event selectedEvent;
     private EditEventController editEventController;
 
+
     public EventCoordinatorController() throws IOException {
         this.eventCoordinatorModel = new EventCoordinatorModel();
         this.eventModel = new EventModel();
         this.selectedEvent = new Event();
         this.editEventController = new EditEventController();
     }
+
+
 
     private void tableViewLoadEvents(ObservableList<Event> allEvents) {
         tvEvents.setItems(getEventData());

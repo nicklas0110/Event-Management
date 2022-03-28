@@ -18,15 +18,7 @@ public class Event {
         this.EventInfo = eventInfo;
 
     }
-    
-    
 
-    public Event() {
-
-    }
-
-    public Event(String eventName, String eventDate, String eventTime, String eventLocation, String eventInfo) {
-    }
 
     public int getEventId() {
         return eventId;

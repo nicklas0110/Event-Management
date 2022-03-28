@@ -1,12 +1,13 @@
 package GUI.controller;
 
 import GUI.Model.EventModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class addEventController {
     @FXML
@@ -21,6 +22,7 @@ public class addEventController {
     public Button btnCreateEvent;
     @FXML
     public Button btnBack;
+    public TextArea txtFieldEventInfo;
 
     private EventModel eventModel;
 
@@ -31,10 +33,11 @@ public class addEventController {
     public void onActionSaveEvent() throws Exception {
         String eventName = txtFieldEventName.getText();
         String eventDate = txtFieldEventDate.getText();
-        String eventTime = txtFieldEventTime.getText();
+        String eventTime = (txtFieldEventTime.getText());
         String eventLocation = txtFieldEventLocation.getText();
+        String eventInfoText = txtFieldEventInfo.getText();
 
-        uploadEventInfo(eventName,eventDate,eventTime,eventLocation);
+        uploadEventInfo(eventName,eventDate,eventTime,eventLocation,eventInfoText);
 
         /*
         eventModel.createEvent(eventName, eventDate, eventTime, eventLocation);
@@ -51,13 +54,12 @@ public class addEventController {
     }
 
 
-    public void uploadEventInfo(String String Event, String start, String Location) throws Exception {
+    public void uploadEventInfo(String event, String start, String eventTime, String location, String eventInfo) throws Exception {
         EventModel eventModelInfo = new EventModel();
 
-        eventModelInfo.addEvent(Event, start, Location);
+        eventModelInfo.addEvent(event, start, eventTime ,location,eventInfo);
     }
 
-
-
-
+    public void handleBtnBack(ActionEvent actionEvent) {
+    }
 }
