@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -48,6 +49,7 @@ public class AdminController implements Initializable {
 
 
 
+
     public void initialize(URL location, ResourceBundle resources) {
         setAdminEventCoordinatorTableView();
 
@@ -85,13 +87,33 @@ public class AdminController implements Initializable {
 
     public void createEventCoordinatorBtn(ActionEvent event) throws IOException {
         Stage stage = (Stage) createEventCoordinator.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/newEventManger.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/NewEventCoordinator.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
 
+    /**
+     * Method used to edit a EventCoordinator
+     */
     public void editEventCoordinatorBtn(ActionEvent event) {
+        setSelectedItems();
+        if(selectedEventCoordinator != null) {
+            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EditEventCoordinator.fxml"));
+            Scene mainWindowScene = null;
+            try {
+                mainWindowScene = new Scene(parent.load());
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            Stage editMovieStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            editMovieStage.setScene(mainWindowScene);
+            EditEventCoordinatorController editEventCoordinatorController = parent.getController();
+            editEventCoordinatorController.setSelectedEventCoordinator(selectedEventCoordinator);
+            editMovieStage.show();
+        }else{
+            System.out.println("No movies are selected");
+        }
     }
     public void deletEventCoordinatorBtn(ActionEvent event) {
         if (SimpleDialogController.delete() && selectedEventCoordinator != null) {

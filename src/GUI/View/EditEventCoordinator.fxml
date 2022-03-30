@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EditEventCoordinatorController">
+   <children>
+      <JFXButton fx:id="EditEventCoordinator" layoutX="494.0" layoutY="455.0" onAction="#EditEventCoordinatorBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="editEventCoordinatorCancel" layoutX="250.0" layoutY="455.0" onAction="#editEventCoordinatorCancelBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Cancel " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea fx:id="lastNameInputEdit" layoutX="234.0" layoutY="283.0" prefHeight="36.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextArea>
+      <JFXTextArea fx:id="emailInputEdit" layoutX="234.0" layoutY="355.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextArea>
+      <JFXTextArea fx:id="passwordInputEdit" layoutX="238.0" layoutY="138.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextArea>
+      <JFXTextArea fx:id="nameInputEdit" layoutX="238.0" layoutY="211.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextArea>
+      <JFXTextArea fx:id="userNameInputEdit" layoutX="238.0" layoutY="66.0" prefHeight="26.0" prefWidth="469.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextArea>
+      <Text layoutX="155.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="155.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="155.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="159.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

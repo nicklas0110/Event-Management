@@ -21,7 +21,7 @@ public class EventCoordinatorDAO {
     }
 
 
-    // This is the method to create a movie in the Database. This is also where the movie gets an ID.
+    // This is the method to create a EventCoordinator in the Database. This is also where the EventCoordinator gets an ID.
     public EventCoordinator addEventCoordinator(String userName, String password, String name) throws Exception {
         Connection con = DC.getConnection();
 
