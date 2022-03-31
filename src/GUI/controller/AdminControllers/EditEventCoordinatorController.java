@@ -5,6 +5,7 @@ import GUI.Model.EventCoordinatorModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,17 +14,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class EditEventCoordinatorController {
-
+    @FXML
     public JFXButton editEventCoordinatorCancel;
+    @FXML
     public JFXButton EditEventCoordinator;
+
+    @FXML
+    public JFXTextArea lastNameInputEdit;
+    @FXML
+    public JFXTextArea emailInputEdit;
+    @FXML
+    public JFXTextArea nameInputEdit;
+    @FXML
+    public JFXTextArea userNameInputEdit;
+
 
     private EventCoordinator selectedEventCoordinator;
     private EventCoordinatorModel eventCoordinatorModel = new EventCoordinatorModel();
-
-    public JFXTextArea lastNameInputEdit;
-    public JFXTextArea emailInputEdit;
-    public JFXTextArea nameInputEdit;
-    public JFXTextArea userNameInputEdit;
 
     public EditEventCoordinatorController() {
     }
@@ -45,7 +52,7 @@ public class EditEventCoordinatorController {
 
         eventCoordinatorModel.updateEventCoordinator(this.selectedEventCoordinator);
 
-       cancel(actionEvent);
+        cancel(actionEvent);
 
     }
 

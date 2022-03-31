@@ -37,6 +37,7 @@ public class EventCoordinatorModel {
         eventCoordinatorList.remove(selectedEventCoordinator);
     }
 
+    // F
     public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
         eventCoordinatorLm.updateEventCoordinator(selectedEventCoordinator);
         eventCoordinatorList.clear();

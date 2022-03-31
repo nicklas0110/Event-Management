@@ -9,6 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class EditEventController {
 
     @FXML
@@ -20,50 +22,60 @@ public class EditEventController {
     @FXML
     public TextField txtFieldEventLocation;
     @FXML
-    public Button btnCreateEvent;
+    public TextArea txtFieldEventInfo;
+
+    @FXML
+    public Button btnEditEventCoordinator;
     @FXML
     public Button btnEditEvent;
     @FXML
     public Button btnBack;
-    @FXML
-    public TextArea txtFieldEventInfo;
 
-    @FXML
-    public void onActionSaveEvent(ActionEvent actionEvent) {
+
+    private Event selectedEvent;
+    private EventModel eventModel = new EventModel();
+
+    public EditEventController() throws IOException {
     }
 
-    @FXML
-    public void handleBtnBack(ActionEvent actionEvent) {
-    }
 
-    EventModel eventModel;
-
-    public void onActionSaveEvent() {
-        String eventName = txtFieldEventName.getText();
-        String eventDate = txtFieldEventDate.getText();
-        String eventTime = txtFieldEventTime.getText();
-        String eventLocation = txtFieldEventLocation.getText();
-        String eventInfo = txtFieldEventInfo.getText();
-
-
-        //Event event = new Event(eventName, eventDate, eventTime, eventLocation, eventInfo);
-        //eventModel.editEvent(event);
-
-        Stage stage = (Stage) btnEditEvent.getScene().getWindow();
-        stage.close();
-    }
-
-    public void setSelectedEvent(Event event) {
+    public void setSelectedEvent(Event event) throws Exception {
         txtFieldEventName.setText(event.getEventName());
-        txtFieldEventDate.setText(event.getEventDato());
+        txtFieldEventDate.setText(event.getEventDate());
         txtFieldEventTime.setText(event.getEventTime());
         txtFieldEventLocation.setText(event.getEventLocation());
-     }
+        this.selectedEvent = event;
+    }
 
+    public void onActionSaveEvent(ActionEvent actionEvent) throws Exception {
+        String updateEventName = txtFieldEventName.getText();
+        String updateEventDate = txtFieldEventDate.getText();
+        String updateEventTime = txtFieldEventTime.getText();
+        String updateEventLocation = txtFieldEventLocation.getText();
+        String updateEventInfo = txtFieldEventInfo.getText();
+
+        this.selectedEvent.setEventName(updateEventName);
+        this.selectedEvent.setEventDate(updateEventDate);
+        this.selectedEvent.setEventTime(updateEventTime);
+        this.selectedEvent.setEventLocation(updateEventLocation);
+        this.selectedEvent.setEventInfo(updateEventInfo);
+
+        eventModel.updateEvents(this.selectedEvent);
+
+        /*
+        Stage stage = (Stage) btnEditEvent.getScene().getWindow();
+        stage.close();
+
+         */
+
+
+    }
+
+
+
+    @FXML
     public void handleBtnBack() {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
     }
-
-
 }

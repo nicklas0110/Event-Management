@@ -90,7 +90,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnCreateEvent" layoutX="414.0" layoutY="459.0" mnemonicParsing="false" onAction="#onActionSaveEvent" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="EditEvent" textFill="WHITE">
+      <Button fx:id="btnEditEventCoordinator" layoutX="414.0" layoutY="459.0" mnemonicParsing="false" onAction="#onActionSaveEvent" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="EditEvent" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>

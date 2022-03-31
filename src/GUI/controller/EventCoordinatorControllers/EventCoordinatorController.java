@@ -112,7 +112,7 @@ public class EventCoordinatorController  implements Initializable   {
 
 
     public void onActionAddEvent() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/CreteEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/editEvent.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Create Event");
         stage.setScene(new Scene(root));
@@ -153,11 +153,11 @@ public class EventCoordinatorController  implements Initializable   {
 
 
 
-    public void onActionEditEvent()  {
+    public void onActionEditEvent() throws Exception {
          if (selectedEvent != null) {
             Event selectedEvent = (Event) tvEvents.getSelectionModel().getSelectedItem();
 
-            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EventCordinatorViews/CreteEvent.fxml"));
+            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EventCordinatorViews/editEvent.fxml"));
             Scene mainWindowScene = null;
             try {
                 mainWindowScene = new Scene(parent.load());

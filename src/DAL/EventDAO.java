@@ -46,6 +46,24 @@ public class EventDAO {
         return null;
     }
 
+    public void updateEvent(Event updateEvent) {
+
+        String sql = "UPDATE EventTable SET EventName= (?), EventTime=(?), EventLocation=(?), EventNotes WHERE UserID = (?);";
+        try (Connection connection = DC.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, updateEvent.getEventId());
+            statement.setString(2, updateEvent.getEventName());
+            statement.setString(3, updateEvent.getEventLocation());
+            statement.setString(4, updateEvent.getEventDate());
+            //statement.setString(5, updateEvent.getEventTime(););
+            statement.setString(5, updateEvent.getEventInfo());
+            statement.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     public List<Event> getAllEvents() throws Exception {
         Connection con = DC.getConnection();
 

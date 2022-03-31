@@ -4,15 +4,15 @@ public class Event {
 
     private int eventId;
     private String EventName;
-    private String EventDato;
+    private String EventDate;
     private String EventTime;
     private String EventLocation;
     private String EventInfo;
 
-    public Event(int eventId, String eventName, String eventDato, String eventTime, String eventLocation, String eventInfo) {
+    public Event(int eventId, String eventName, String eventDate, String eventTime, String eventLocation, String eventInfo) {
         this.eventId = eventId;
         this.EventName = eventName;
-        this.EventDato = eventDato;
+        this.EventDate = eventDate;
         this.EventTime = eventTime;
         this.EventLocation = eventLocation;
         this.EventInfo = eventInfo;
@@ -36,16 +36,14 @@ public class Event {
         EventName = eventName;
     }
 
-    public String getEventDato() {
-        return EventDato;
-    }
 
-    public void setEventDato(String eventDato) {
-        EventDato = eventDato;
+
+    public String getEventDate() {
+       return  EventDate;
     }
 
     public void setEventDate(String eventDate) {
-        this.EventDato = eventDate;
+        this.EventDate = eventDate;
     }
 
     public String getEventTime() {
