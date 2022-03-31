@@ -16,7 +16,7 @@ public class EditEventCoordinatorController {
 
     public JFXButton editEventCoordinatorCancel;
     public JFXButton EditEventCoordinator;
-    
+
     private EventCoordinator selectedEventCoordinator;
     private EventCoordinatorModel eventCoordinatorModel = new EventCoordinatorModel();
 

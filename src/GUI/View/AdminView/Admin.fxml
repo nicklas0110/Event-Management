@@ -10,8 +10,8 @@
    <children>
       <TableView fx:id="adminEventCoordinatorTableView" layoutX="305.0" layoutY="75.0" prefHeight="450.0" prefWidth="550.0">
          <columns>
-            <TableColumn fx:id="adminEventCoordinatorTableViewLastname" prefWidth="150.0" text="UserName" />
             <TableColumn fx:id="adminEventCoordinatorTableViewName" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="adminEventCoordinatorTableViewUserName" prefWidth="150.0" text="UserName" />
             <TableColumn fx:id="adminEventCoordinatorTableViewEmail" prefWidth="150.0" text="E-mail" />
             <TableColumn fx:id="adminEventMangerCoordinatorViewEvents" minWidth="0.0" prefWidth="99.0" text="Events" />
          </columns>

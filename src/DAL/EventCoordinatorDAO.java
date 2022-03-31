@@ -55,7 +55,7 @@ public class EventCoordinatorDAO {
         Statement statement = con.createStatement();
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) { // Creates and adds song objects into an array list
-            EventCoordinator eventCord = new EventCoordinator(rs.getInt("UserID"), rs.getString("UserName"), rs.getString("name"));
+            EventCoordinator eventCord = new EventCoordinator(rs.getInt("UserID"), rs.getString("name"), rs.getString("UserName"));
             allCoordinators.add(eventCord);
         }
         return allCoordinators;

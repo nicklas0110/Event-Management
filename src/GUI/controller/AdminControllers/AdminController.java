@@ -34,7 +34,7 @@ public class AdminController implements Initializable {
     @FXML
     public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewName;
     @FXML
-    public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewLastname;
+    public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewUserName;
     @FXML
     public TableColumn<EventCoordinator, String> adminEventCoordinatorTableViewEmail;
     @FXML
@@ -47,7 +47,6 @@ public class AdminController implements Initializable {
     public JFXButton deletEventCoordinator;
     @FXML
     public JFXButton logOutAdmin;
-
 
 
 
@@ -65,9 +64,9 @@ public class AdminController implements Initializable {
      */
     private void setAdminEventCoordinatorTableView() {
 
-        adminEventCoordinatorTableViewName.setCellValueFactory(new PropertyValueFactory<>("username"));
+        adminEventCoordinatorTableViewName.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        adminEventCoordinatorTableViewLastname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        adminEventCoordinatorTableViewUserName.setCellValueFactory(new PropertyValueFactory<>("username"));
 
         adminEventCoordinatorTableView.setItems(eventCoordinatorModel.getAllEventCoordinator());
     }
