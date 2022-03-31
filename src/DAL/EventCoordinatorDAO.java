@@ -80,9 +80,8 @@ public class EventCoordinatorDAO {
 
     public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
 
-        String sql = "UPDATE UserTable SET UserName= (?), name=(?),WHERE UserID = (?);";
-        try(Connection connection = DC.getConnection())
-        {
+        String sql = "UPDATE UserTable SET UserName= (?), name=(?) WHERE UserID = (?);";
+        try (Connection connection = DC.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, selectedEventCoordinator.getUsername());
             statement.setString(2, selectedEventCoordinator.getName());

@@ -21,12 +21,4 @@ public class SimpleDialogController {
             return false;
         }
     }
-
-    /**
-     * Opens window to ask user to input category name
-     * @return user input
-     */
-    public static String Category(){
-        return JOptionPane.showInputDialog(null,"Category name: ", "New/Edit Category", JOptionPane.PLAIN_MESSAGE);
-    }
 }

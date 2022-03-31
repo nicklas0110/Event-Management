@@ -16,6 +16,7 @@ public class EditEventCoordinatorController {
 
     public JFXButton editEventCoordinatorCancel;
     public JFXButton EditEventCoordinator;
+    
     private EventCoordinator selectedEventCoordinator;
     private EventCoordinatorModel eventCoordinatorModel = new EventCoordinatorModel();
 
@@ -31,16 +32,16 @@ public class EditEventCoordinatorController {
      * sets the values of the selected eventCoordinator.
      */
     public void setSelectedEventCoordinator(EventCoordinator eventCoordinator) {
+        userNameInputEdit.setText(eventCoordinator.getUsername());
         nameInputEdit.setText(eventCoordinator.getName());
-        userNameInputEdit.setText(String.valueOf(eventCoordinator.getUsername()));
         this.selectedEventCoordinator = eventCoordinator;
     }
 
     public void EditEventCoordinatorBtn(ActionEvent actionEvent) throws IOException {
-        String updateEventCoordinatorName = nameInputEdit.getText();
         String updateEventCoordinatorUserName = userNameInputEdit.getText();
-        this.selectedEventCoordinator.setName(updateEventCoordinatorName);
+        String updateEventCoordinatorName = nameInputEdit.getText();
         this.selectedEventCoordinator.setUsername(updateEventCoordinatorUserName);
+        this.selectedEventCoordinator.setName(updateEventCoordinatorName);
 
         eventCoordinatorModel.updateEventCoordinator(this.selectedEventCoordinator);
 
