@@ -1,4 +1,4 @@
-package GUI.controller;
+package GUI.controller.UserConrollers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +31,7 @@ public class CustomerController {
 
     public void myTicketsBtn(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) myTickets.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MyTickets.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/MyTickets.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);

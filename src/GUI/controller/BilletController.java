@@ -17,7 +17,7 @@ public class BilletController {
 
     public void closeBtn(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) close.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MyTickets.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/MyTickets.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);

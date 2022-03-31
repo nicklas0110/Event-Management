@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.CustomerController">
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.UserConrollers.CustomerController">
    <children>
       <JFXButton fx:id="myTickets" layoutX="72.0" layoutY="350.0" onAction="#myTicketsBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="My Tickets" textFill="WHITE">
          <font>

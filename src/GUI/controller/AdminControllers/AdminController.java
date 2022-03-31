@@ -1,7 +1,8 @@
-package GUI.controller;
+package GUI.controller.AdminControllers;
 
 import BE.EventCoordinator;
 import GUI.Model.EventCoordinatorModel;
+import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -87,7 +88,7 @@ public class AdminController implements Initializable {
 
     public void createEventCoordinatorBtn(ActionEvent event) throws IOException {
         Stage stage = (Stage) createEventCoordinator.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/NewEventCoordinator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/NewEventCoordinator.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -99,7 +100,7 @@ public class AdminController implements Initializable {
     public void editEventCoordinatorBtn(ActionEvent event) {
         setSelectedItems();
         if(selectedEventCoordinator != null) {
-            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EditEventCoordinator.fxml"));
+            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/AdminView/EditEventCoordinator.fxml"));
             Scene mainWindowScene = null;
             try {
                 mainWindowScene = new Scene(parent.load());

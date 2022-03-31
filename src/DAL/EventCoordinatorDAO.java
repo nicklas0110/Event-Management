@@ -77,4 +77,20 @@ public class EventCoordinatorDAO {
             throwables.printStackTrace();
         }
     }
+
+    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
+
+        String sql = "UPDATE UserTable SET UserName= (?), name=(?),WHERE UserID = (?);";
+        try(Connection connection = DC.getConnection())
+        {
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, selectedEventCoordinator.getUsername());
+            statement.setString(2, selectedEventCoordinator.getName());
+            statement.setInt(3, selectedEventCoordinator.getId());
+            statement.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

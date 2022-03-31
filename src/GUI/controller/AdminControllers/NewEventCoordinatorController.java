@@ -1,4 +1,4 @@
-package GUI.controller;
+package GUI.controller.AdminControllers;
 
 import GUI.Model.EventCoordinatorModel;
 import com.jfoenix.controls.JFXButton;
@@ -44,7 +44,7 @@ public class NewEventCoordinatorController {
         uploadEventCoordinatorInfo(uploadUserName, uploadpassword, uploadName);
 
         Stage stage = (Stage) newEventCoordinatorCancel.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/Admin.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -52,7 +52,7 @@ public class NewEventCoordinatorController {
 
     public void newEventCoordinatorCancelBtn(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) newEventCoordinatorCancel.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/Admin.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);

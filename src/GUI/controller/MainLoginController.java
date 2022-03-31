@@ -1,6 +1,5 @@
 package GUI.controller;
 
-import BE.EventCoordinator;
 import BLL.LoginManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +57,7 @@ public class MainLoginController {
 
     private void loadCustomerView() throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Customer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/Customer.fxml"));
         stage.setTitle("Customer");
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -66,7 +65,7 @@ public class MainLoginController {
 
     private void loadEventCoordinatorView() throws IOException {
         Stage switcher = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);
@@ -74,7 +73,7 @@ public class MainLoginController {
 
     private void loadAdminView() throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/Admin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/Admin.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);

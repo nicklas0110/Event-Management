@@ -38,4 +38,8 @@ public class EventCoordinatorCoordinator {
     public void removeEventCoordinator(EventCoordinator selectedEventCoordinator) {
         eventCoordinatorDAO.removeEventCoordinator(selectedEventCoordinator);
     }
+
+    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
+        eventCoordinatorDAO.updateEventCoordinator(selectedEventCoordinator);
+    }
 }

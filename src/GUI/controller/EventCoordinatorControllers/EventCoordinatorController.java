@@ -1,11 +1,10 @@
-package GUI.controller;
+package GUI.controller.EventCoordinatorControllers;
 
 import BE.Event;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
+import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -96,7 +95,7 @@ public class EventCoordinatorController  implements Initializable   {
 
     public void onActionAddEvent(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) btnAddEvent.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/addEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/addEvent.fxml"));
         switcher.setTitle("Add New Event");
         Scene scene = new Scene(root);
         switcher.setScene(scene);
@@ -113,7 +112,7 @@ public class EventCoordinatorController  implements Initializable   {
 
 
     public void onActionAddEvent() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CreteEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/CreteEvent.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Create Event");
         stage.setScene(new Scene(root));
@@ -158,7 +157,7 @@ public class EventCoordinatorController  implements Initializable   {
          if (selectedEvent != null) {
             Event selectedEvent = (Event) tvEvents.getSelectionModel().getSelectedItem();
 
-            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/CreteEvent.fxml"));
+            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EventCordinatorViews/CreteEvent.fxml"));
             Scene mainWindowScene = null;
             try {
                 mainWindowScene = new Scene(parent.load());

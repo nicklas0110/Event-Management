@@ -1,4 +1,4 @@
-package GUI.controller;
+package GUI.controller.EventCoordinatorControllers;
 
 import BE.Event;
 import GUI.Model.EventModel;

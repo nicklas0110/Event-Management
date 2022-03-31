@@ -10,30 +10,36 @@ import java.io.IOException;
 public class EventCoordinatorModel {
     private ObservableList<EventCoordinator> eventCoordinatorList = FXCollections.observableArrayList();;
 
-    private EventCoordinatorCoordinator eventCEventCoordinator;
+    private EventCoordinatorCoordinator eventCoordinatorLm;
 
 
     public EventCoordinatorModel() {
         try {
-            eventCEventCoordinator = new EventCoordinatorCoordinator();
+            eventCoordinatorLm = new EventCoordinatorCoordinator();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public ObservableList<EventCoordinator> getAllEventCoordinator(){
-        ObservableList<EventCoordinator> allEventCords = eventCEventCoordinator.getAllEventCoordinators();
+        ObservableList<EventCoordinator> allEventCords = eventCoordinatorLm.getAllEventCoordinators();
         eventCoordinatorList = allEventCords;
         return allEventCords;
     }
 
 
     public void addEventCoordinator(String userName, String password, String name) throws Exception {
-        eventCoordinatorList.add(eventCEventCoordinator.addEventCoordinator(userName, password, name));
+        eventCoordinatorList.add(eventCoordinatorLm.addEventCoordinator(userName, password, name));
     }
 
     public void removeEventCoordinator(EventCoordinator selectedEventCoordinator) {
-        eventCEventCoordinator.removeEventCoordinator(selectedEventCoordinator);
+        eventCoordinatorLm.removeEventCoordinator(selectedEventCoordinator);
         eventCoordinatorList.remove(selectedEventCoordinator);
+    }
+
+    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
+        eventCoordinatorLm.updateEventCoordinator(selectedEventCoordinator);
+        eventCoordinatorList.clear();
+        eventCoordinatorList.addAll(eventCoordinatorLm.getAllEventCoordinators());
     }
 }

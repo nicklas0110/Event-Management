@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="595.0" prefWidth="599.0" stylesheets="@stylesheet/eventCoordinator.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EventCoordinatorController">
+<AnchorPane prefHeight="595.0" prefWidth="599.0" stylesheets="@../stylesheet/eventCoordinator.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EventCoordinatorControllers.EventCoordinatorController">
    <children>
       <Pane fx:id="paneEventC" prefHeight="132.0" prefWidth="739.0">
          <children>

@@ -1,4 +1,4 @@
-package GUI.controller;
+package GUI.controller.EventCoordinatorControllers;
 
 import GUI.Model.EventModel;
 import javafx.event.ActionEvent;
@@ -44,7 +44,7 @@ public class addEventController {
         uploadEventInfo(eventName,eventDate,eventTime,eventLocation,eventInfoText);
 
         Stage stage = (Stage) btnBack.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
         stage.setTitle("AdminView");
         Scene scene = new Scene(root);
         stage.setScene(scene);

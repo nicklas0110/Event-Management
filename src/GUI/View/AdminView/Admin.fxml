@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.AdminController">
+<AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.AdminControllers.AdminController">
    <children>
       <TableView fx:id="adminEventCoordinatorTableView" layoutX="305.0" layoutY="75.0" prefHeight="450.0" prefWidth="550.0">
          <columns>

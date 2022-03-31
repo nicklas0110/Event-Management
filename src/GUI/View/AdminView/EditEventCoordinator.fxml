@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EditEventCoordinatorController">
+<AnchorPane prefHeight="600.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.AdminControllers.EditEventCoordinatorController">
    <children>
       <JFXButton fx:id="EditEventCoordinator" layoutX="494.0" layoutY="455.0" onAction="#EditEventCoordinatorBtn" prefHeight="100.0" prefWidth="190.0" style="-fx-background-color: #00CBD6;" text="Create" textFill="WHITE">
          <font>
