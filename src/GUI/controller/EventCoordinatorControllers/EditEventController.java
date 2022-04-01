@@ -51,6 +51,7 @@ public class EditEventController {
         this.selectedEvent = event;
     }
 
+    @FXML
     public void onActionSaveEvent(ActionEvent actionEvent) throws Exception {
         String updateEventName = txtFieldEventName.getText();
         String updateEventDate = txtFieldEventDate.getText();
@@ -66,14 +67,7 @@ public class EditEventController {
 
         eventModel.editEvents(this.selectedEvent);
 
-        cancel(actionEvent);
-
-        /*
-        Stage stage = (Stage) btnEditEvent.getScene().getWindow();
-        stage.close();
-
-         */
-
+        backToEventcoordinatorWindow(actionEvent);
 
     }
 
@@ -81,10 +75,10 @@ public class EditEventController {
 
     @FXML
     public void handleBtnBack(ActionEvent actionEvent) throws IOException {
-        cancel(actionEvent);
+        backToEventcoordinatorWindow(actionEvent);
     }
 
-    private void cancel(ActionEvent actionEvent) throws IOException {
+    private void backToEventcoordinatorWindow(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) btnEditEventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
         Scene scene = new Scene(root);
