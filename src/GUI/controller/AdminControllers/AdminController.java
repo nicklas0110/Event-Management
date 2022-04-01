@@ -88,7 +88,7 @@ public class AdminController implements Initializable {
     public void createEventCoordinatorBtn(ActionEvent event) throws IOException {
         Stage stage = (Stage) createEventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/NewEventCoordinator.fxml"));
-        stage.setTitle("AdminView");
+        stage.setTitle("Create new EventCoordinator");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
@@ -106,13 +106,13 @@ public class AdminController implements Initializable {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-            Stage editMovieStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            editMovieStage.setScene(mainWindowScene);
+            Stage editEventCoordinatorStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            editEventCoordinatorStage.setScene(mainWindowScene);
             EditEventCoordinatorController editEventCoordinatorController = parent.getController();
             editEventCoordinatorController.setSelectedEventCoordinator(selectedEventCoordinator);
-            editMovieStage.show();
+            editEventCoordinatorStage.show();
         }else{
-            System.out.println("No movies are selected");
+            System.out.println("No EventCoordinator are selected");
         }
     }
     public void deletEventCoordinatorBtn(ActionEvent event) {
@@ -125,7 +125,7 @@ public class AdminController implements Initializable {
         Stage switcher = (Stage) createEventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MainLoginView.fxml"));
         Scene scene = new Scene(root);
-        switcher.setTitle("EventCoordinatorManagement");
+        switcher.setTitle("Log in Event Management");
         switcher.setScene(scene);
     }
 

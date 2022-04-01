@@ -3,12 +3,14 @@ package GUI.controller.EventCoordinatorControllers;
 import BE.Event;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
+import GUI.controller.AdminControllers.EditEventCoordinatorController;
 import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -70,7 +72,6 @@ public class EventCoordinatorController  implements Initializable   {
             e.printStackTrace();
         }
 
-
         tvEvents.setOnMouseClicked((MouseEvent event) -> {
             setSelectedItems();
         });
@@ -89,7 +90,7 @@ public class EventCoordinatorController  implements Initializable   {
         Stage switcher = (Stage) btnLogOuteventCoordinator.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/MainLoginView.fxml"));
         Scene scene = new Scene(root);
-        switcher.setTitle("Main log in view");
+        switcher.setTitle("Log in Event Management");
         switcher.setScene(scene);
     }
 
@@ -97,15 +98,6 @@ public class EventCoordinatorController  implements Initializable   {
         Stage switcher = (Stage) btnAddEvent.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/addEvent.fxml"));
         switcher.setTitle("Add New Event");
-        Scene scene = new Scene(root);
-        switcher.setScene(scene);
-    }
-
-    public void EditEventActionButton(ActionEvent actionEvent) throws IOException {
-
-        Stage switcher = (Stage) btnEditEventKoordinator.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/eddEvent.fxml"));
-        switcher.setTitle("Create New Event");
         Scene scene = new Scene(root);
         switcher.setScene(scene);
     }
@@ -140,7 +132,7 @@ public class EventCoordinatorController  implements Initializable   {
 
         tcEventName.setCellValueFactory(new PropertyValueFactory<>("eventName"));
 
-        tcEventDate.setCellValueFactory(new PropertyValueFactory<>("eventDato"));
+        tcEventDate.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
 
         tcEventTime.setCellValueFactory(new PropertyValueFactory<>("eventTime"));
 
@@ -151,9 +143,7 @@ public class EventCoordinatorController  implements Initializable   {
 
 
 
-
-
-    public void onActionEditEvent() throws Exception {
+    public void onActionEditEvent(ActionEvent actionEvent) throws Exception {
          if (selectedEvent != null) {
             Event selectedEvent = (Event) tvEvents.getSelectionModel().getSelectedItem();
 
@@ -164,7 +154,16 @@ public class EventCoordinatorController  implements Initializable   {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-            Stage editEventStage;
+             Stage editEventCoordinatorStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+             editEventCoordinatorStage.setScene(mainWindowScene);
+             EditEventController editEventController = parent.getController();
+             editEventController.setSelectedEvent(selectedEvent);
+             editEventCoordinatorStage.show();
+
+
+
+
+            /*Stage editEventStage;
             editEventStage = new Stage();
             editEventStage.setScene(mainWindowScene);
             EditEventController editEventController = parent.getController();
@@ -173,15 +172,11 @@ public class EventCoordinatorController  implements Initializable   {
             editEventStage.setOnHiding(event ->
             {
             });
-        }
-    }
 
-    private void selectedEvent() {
-        this.tvEvents.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
-            if ((Event) newValue != null) {
-                this.selectedEvent = (Event) newValue;
-            }
-        }));
+         */
+        }
+
+
     }
 
     public void handleBtnDeleteEvent(ActionEvent event) {
@@ -190,6 +185,7 @@ public class EventCoordinatorController  implements Initializable   {
         }
 
     }
+
     /**
      * Changes selected Name  in the adminEventMangerTableViewName
      */

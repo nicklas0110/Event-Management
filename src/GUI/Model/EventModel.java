@@ -29,9 +29,6 @@ public class EventModel {
         eventList.add(eventManager.createEvent(event, start, eventTime, location, eventInfo));
      }
 
-    public void editEvent(Event event) {
-    }
-
     public ObservableList<Event> getAllEvents() throws IOException {
        eventList = eventManager.getAllEvents();
        return eventList;
@@ -44,7 +41,7 @@ public class EventModel {
 
 
 
-    public void updateEvents(Event selectedEvents) {
+    public void editEvents(Event selectedEvents) {
         eventManager.editEvent(selectedEvents);
         eventList.clear();
         eventList.addAll(eventManager.getAllEvents());

@@ -1,16 +1,12 @@
 package BLL;
 
 import BE.Event;
-import BE.EventCoordinator;
-import DAL.EventCoordinatorDAO;
 import DAL.EventDAO;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 public class EventManager {
     EventDAO eventDAO = new EventDAO();
@@ -59,7 +55,7 @@ public class EventManager {
     */
 
     public void editEvent(Event selectedEvents) {
-        eventDAO.updateEvent(selectedEvents);
+        eventDAO.editEvent(selectedEvents);
     }
 
 

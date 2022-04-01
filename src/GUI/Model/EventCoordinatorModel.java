@@ -38,8 +38,8 @@ public class EventCoordinatorModel {
     }
 
     // F
-    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
-        eventCoordinatorLm.updateEventCoordinator(selectedEventCoordinator);
+    public void editEventCoordinator(EventCoordinator selectedEventCoordinator) {
+        eventCoordinatorLm.editEventCoordinator(selectedEventCoordinator);
         eventCoordinatorList.clear();
         eventCoordinatorList.addAll(eventCoordinatorLm.getAllEventCoordinators());
     }

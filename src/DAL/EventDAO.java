@@ -46,17 +46,17 @@ public class EventDAO {
         return null;
     }
 
-    public void updateEvent(Event updateEvent) {
+    public void editEvent(Event editEvent) {
 
-        String sql = "UPDATE EventTable SET EventName= (?), EventTime=(?), EventLocation=(?), EventNotes WHERE UserID = (?);";
+        String sql = "UPDATE EventTable SET EventName= (?), EventDato=(?), EventTime=(?), EventLocation=(?), EventNotes=(?)  WHERE EventID = (?);";
         try (Connection connection = DC.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setInt(1, updateEvent.getEventId());
-            statement.setString(2, updateEvent.getEventName());
-            statement.setString(3, updateEvent.getEventLocation());
-            statement.setString(4, updateEvent.getEventDate());
-            //statement.setString(5, updateEvent.getEventTime(););
-            statement.setString(5, updateEvent.getEventInfo());
+            statement.setString(1, editEvent.getEventName());
+            statement.setString(2, editEvent.getEventDate());
+            statement.setString(3, editEvent.getEventTime());
+            statement.setString(4, editEvent.getEventLocation());
+            statement.setString(5, editEvent.getEventInfo());
+            statement.setInt(6, editEvent.getEventId());
             statement.executeUpdate();
 
         } catch (SQLException throwables) {
@@ -75,7 +75,7 @@ public class EventDAO {
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) { // Creates and adds song objects into an array list
             Event eventCord = new Event(rs.getInt("EventID"), rs.getString("EventName"),
-                    rs.getString("EventTime"), rs.getString("EventDato"), rs.getString("EventLocation"),
+                    rs.getString("EventDato"), rs.getString("EventTime"), rs.getString("EventLocation"),
                     rs.getString("EventNotes"));
             allCoordinators.add(eventCord);
         }

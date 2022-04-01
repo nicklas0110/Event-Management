@@ -4,6 +4,9 @@ import BE.Event;
 import GUI.Model.EventModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -44,6 +47,7 @@ public class EditEventController {
         txtFieldEventDate.setText(event.getEventDate());
         txtFieldEventTime.setText(event.getEventTime());
         txtFieldEventLocation.setText(event.getEventLocation());
+        txtFieldEventInfo.setText(event.getEventInfo());
         this.selectedEvent = event;
     }
 
@@ -60,7 +64,9 @@ public class EditEventController {
         this.selectedEvent.setEventLocation(updateEventLocation);
         this.selectedEvent.setEventInfo(updateEventInfo);
 
-        eventModel.updateEvents(this.selectedEvent);
+        eventModel.editEvents(this.selectedEvent);
+
+        cancel(actionEvent);
 
         /*
         Stage stage = (Stage) btnEditEvent.getScene().getWindow();
@@ -74,8 +80,16 @@ public class EditEventController {
 
 
     @FXML
-    public void handleBtnBack() {
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
+    public void handleBtnBack(ActionEvent actionEvent) throws IOException {
+        cancel(actionEvent);
     }
+
+    private void cancel(ActionEvent actionEvent) throws IOException {
+        Stage switcher = (Stage) btnEditEventCoordinator.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
+        Scene scene = new Scene(root);
+        switcher.setTitle("EventCoordinatorManagement");
+        switcher.setScene(scene);
+    }
+
 }

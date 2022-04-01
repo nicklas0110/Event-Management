@@ -45,12 +45,12 @@ public class EditEventCoordinatorController {
     }
 
     public void EditEventCoordinatorBtn(ActionEvent actionEvent) throws IOException {
-        String updateEventCoordinatorUserName = userNameInputEdit.getText();
-        String updateEventCoordinatorName = nameInputEdit.getText();
+        String updateEventCoordinatorUserName = userNameInputEdit.getText().replaceAll(" ","");
+        String updateEventCoordinatorName = nameInputEdit.getText().replaceAll(" ","");
         this.selectedEventCoordinator.setUsername(updateEventCoordinatorUserName);
         this.selectedEventCoordinator.setName(updateEventCoordinatorName);
 
-        eventCoordinatorModel.updateEventCoordinator(this.selectedEventCoordinator);
+        eventCoordinatorModel.editEventCoordinator(this.selectedEventCoordinator);
 
         cancel(actionEvent);
 
@@ -60,7 +60,7 @@ public class EditEventCoordinatorController {
         Stage switcher = (Stage) editEventCoordinatorCancel.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/Admin.fxml"));
         Scene scene = new Scene(root);
-        switcher.setTitle("EventCoordinatorManagement");
+        switcher.setTitle("AdminView");
         switcher.setScene(scene);
     }
 

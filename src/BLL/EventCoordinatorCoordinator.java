@@ -40,7 +40,7 @@ public class EventCoordinatorCoordinator {
     }
 
     // F
-    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
-        eventCoordinatorDAO.updateEventCoordinator(selectedEventCoordinator);
+    public void editEventCoordinator(EventCoordinator selectedEventCoordinator) {
+        eventCoordinatorDAO.editEventCoordinator(selectedEventCoordinator);
     }
 }

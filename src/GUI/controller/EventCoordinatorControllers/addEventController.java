@@ -34,42 +34,34 @@ public class addEventController {
         this.eventModel = new EventModel();
     }
 
-    public void onActionSaveEvent() throws Exception {
+    public void onActionSaveEvent(ActionEvent actionEvent) throws Exception {
         String eventName = txtFieldEventName.getText();
         String eventDate = txtFieldEventDate.getText();
         String eventTime = (txtFieldEventTime.getText());
         String eventLocation = txtFieldEventLocation.getText();
         String eventInfoText = txtFieldEventInfo.getText();
 
-        uploadEventInfo(eventName,eventDate,eventTime,eventLocation,eventInfoText);
+        uploadEventInfo(eventName, eventDate, eventTime, eventLocation, eventInfoText);
 
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
-        stage.setTitle("AdminView");
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
-        /*
-        eventModel.createEvent(eventName, eventDate, eventTime, eventLocation);
-        Stage stage = (Stage) btnCreateEvent.getScene().getWindow();
-        stage.close();
-    }
-
-    public void handleBtnBack(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) btnBack.getScene().getWindow();
-        stage.close();
-    }
-
-         */
+        cancel(actionEvent);
     }
 
 
     public void uploadEventInfo(String event, String start, String eventTime, String location, String eventInfo) throws Exception {
         EventModel eventModelInfo = new EventModel();
 
-        eventModelInfo.addEvent(event, start, eventTime ,location,eventInfo);
+        eventModelInfo.addEvent(event, start, eventTime, location, eventInfo);
     }
 
-    public void handleBtnBack(ActionEvent actionEvent) {
+    public void handleBtnBack(ActionEvent actionEvent) throws IOException {
+        cancel(actionEvent);
+    }
+
+    private void cancel(ActionEvent actionEvent) throws IOException {
+        Stage switcher = (Stage) btnCreateEvent.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/AdminView/Admin.fxml"));
+        Scene scene = new Scene(root);
+        switcher.setTitle("EventCoordinatorManagement");
+        switcher.setScene(scene);
     }
 }

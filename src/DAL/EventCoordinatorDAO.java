@@ -78,7 +78,7 @@ public class EventCoordinatorDAO {
         }
     }
 
-    public void updateEventCoordinator(EventCoordinator selectedEventCoordinator) {
+    public void editEventCoordinator(EventCoordinator selectedEventCoordinator) {
 
         String sql = "UPDATE UserTable SET UserName= (?), name=(?) WHERE UserID = (?);";
         try (Connection connection = DC.getConnection()) {
