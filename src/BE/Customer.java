@@ -1,3 +1,5 @@
+package BE;
+
 public class Customer {
     private int id;
     private String Name;

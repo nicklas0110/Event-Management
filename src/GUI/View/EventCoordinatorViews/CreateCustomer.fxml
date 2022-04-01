@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="610.0" prefWidth="1029.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.View.CreateCustomer">
+<AnchorPane prefHeight="610.0" prefWidth="1029.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EventCoordinatorControllers.CreateCustomerController">
    <children>
       <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="58.0" prefWidth="1031.0" style="-fx-background-color: #ffe72f;">
          <effect>
@@ -23,7 +23,7 @@
       </Pane>
       <Pane layoutX="257.0" layoutY="70.0" prefHeight="447.0" prefWidth="742.0" style="-fx-border-color: #543f3f; -fx-border-width: 0.5px;">
          <children>
-            <Text layoutX="26.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer View" wrappingWidth="715.4699859619141">
+            <Text layoutX="26.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BE.Customer View" wrappingWidth="715.4699859619141">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Text>
@@ -43,7 +43,7 @@
       </TableView>
       <Pane layoutX="14.0" layoutY="68.0" prefHeight="306.0" prefWidth="213.0" style="-fx-border-color: #543f3f; -fx-border-width: 0.5px;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="241.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Add Customer" textFill="WHITE" />
+            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="241.0" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Add BE.Customer" textFill="WHITE" />
             <TextField layoutX="31.0" layoutY="65.0" prefHeight="29.0" prefWidth="149.0" promptText="First Name">
                <opaqueInsets>
                   <Insets right="12.0" top="12.0" />
@@ -51,7 +51,7 @@
             <TextField layoutX="31.0" layoutY="108.0" prefHeight="29.0" prefWidth="149.0" promptText="Last Name" />
             <TextField layoutX="31.0" layoutY="149.0" prefHeight="29.0" prefWidth="149.0" promptText="Phone Number" />
             <TextField layoutX="31.0" layoutY="190.0" prefHeight="29.0" prefWidth="149.0" promptText="E-mail" />
-            <Label layoutX="31.0" layoutY="26.0" prefHeight="16.0" prefWidth="191.0" text="Add New Customer">
+            <Label layoutX="31.0" layoutY="26.0" prefHeight="16.0" prefWidth="191.0" text="Add New BE.Customer">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -63,12 +63,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Text layoutX="-2.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #ffe72f;" text="Customer Manager" textAlignment="CENTER" wrappingWidth="1030.2665649414062">
+      <Text layoutX="-2.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #ffe72f;" text="BE.Customer Manager" textAlignment="CENTER" wrappingWidth="1030.2665649414062">
          <font>
             <Font name="Berlin Sans FB" size="34.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnDeleteCustomer" buttonType="RAISED" layoutX="430.0" layoutY="541.0" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Delete Customer" textFill="WHITE" />
-      <JFXButton fx:id="btnEditCustomer1" buttonType="RAISED" layoutX="260.0" layoutY="539.0" prefHeight="36.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Edit Customer" textFill="WHITE" />
+      <JFXButton fx:id="btnDeleteCustomer" buttonType="RAISED" layoutX="430.0" layoutY="541.0" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Delete BE.Customer" textFill="WHITE" />
+      <JFXButton fx:id="btnEditCustomer1" buttonType="RAISED" layoutX="260.0" layoutY="539.0" prefHeight="36.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Edit BE.Customer" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -26,7 +26,7 @@ public class MainLoginController {
 
     @FXML
     private Button btnLogin;
-    //private Customer customer = new Customer();
+    //private BE.Customer customer = new BE.Customer();
 
 
     private LoginManager loginManager;
@@ -58,7 +58,7 @@ public class MainLoginController {
     private void loadCustomerView() throws IOException {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/Customer.fxml"));
-        stage.setTitle("Customer");
+        stage.setTitle("BE.Customer");
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }

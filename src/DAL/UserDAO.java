@@ -41,7 +41,7 @@ public class UserDAO {
         return switch (str) {
             case "Admin" -> UserType.Admin;
             case "EventCoordinator" -> UserType.EventCoordinator;
-            case "Customer" -> UserType.Customer;
+            case "BE.Customer" -> UserType.Customer;
             default -> UserType.Customer;
         };
     }
