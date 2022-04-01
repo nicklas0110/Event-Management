@@ -7,6 +7,8 @@ import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDAO {
 
@@ -45,4 +47,20 @@ public class CustomerDAO {
         return null;
     }
 
+    public Customer getAllCustomers() throws SQLException {
+        Connection con = DC.getConnection();
+
+        List<Customer> allCustomer = new ArrayList<>();
+
+
+        String sql = "SELECT * FROM UserTable WHERE UserType = 'EventCoordinator'";
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) { // Creates and adds song objects into an array list
+            Customer customer = new Customer(rs.getInt("id"), rs.getString("name"),
+                    rs.getString("lastName"),rs.getString("phoneNumber"),rs.getString("email"));
+            allCustomer.add(customer);
+        }
+        return (Customer) allCustomer;
+    }
 }

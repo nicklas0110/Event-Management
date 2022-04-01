@@ -16,4 +16,9 @@ public class CustomerModel {
     public void addCustomer(String name, String lastName, String phoneNumber, String email) throws SQLException {
         customerList.add(customerManagerLm.addCustomer(name, lastName, phoneNumber, email));
     }
+
+    public ObservableList<Customer> getCustomers() {
+        customerList = customerManagerLm.getCustomers();
+        return customerList;
+    }
 }

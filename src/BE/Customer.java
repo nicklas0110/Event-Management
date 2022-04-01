@@ -7,7 +7,8 @@ public class Customer {
     private String phoneNumber;
     private String email;
 
-    public Customer(int id, String name, String lastName, String phoneNumber, String email) {
+
+    public Customer(int id, String name, String lastName, String phoneNumber, String email) {''
         this.id = id;
         Name = name;
         this.lastName = lastName;

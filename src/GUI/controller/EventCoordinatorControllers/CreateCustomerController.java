@@ -1,5 +1,6 @@
 package GUI.controller.EventCoordinatorControllers;
 
+import BE.Customer;
 import GUI.Model.CustomerModel;
 import GUI.Model.EventCoordinatorModel;
 import com.jfoenix.controls.JFXButton;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,12 +22,15 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class CreateCustomerController implements Initializable {
-    public TableView tvCustomers;
-    public TableColumn tcCustomerID;
-    public TableColumn tcFirstName;
-    public TableColumn tcLastName;
-    public TableColumn tcPhoneNumber;
-    public TableColumn tcEmail;
+    public CustomerModel customerModel;
+
+
+    public TableView<Customer> tvCustomers;
+    public TableColumn<Customer, String> tcCustomerID;
+    public TableColumn<Customer, String> tcFirstName;
+    public TableColumn<Customer, String> tcLastName;
+    public TableColumn<Customer, String> tcPhoneNumber;
+    public TableColumn<Customer, String> tcEmail;
 
     public TextField customerNameTxt;
     public TextField customerLastNameTxt;
@@ -40,6 +45,11 @@ public class CreateCustomerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            setCustomersView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -74,6 +84,26 @@ public class CreateCustomerController implements Initializable {
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);
+    }
+
+    /**m
+     * Method used for initializing the Customers table.
+     */
+    private void setCustomersView() throws IOException {
+
+        tcCustomerID.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+
+        tcFirstName.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+
+        tcLastName.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
+
+        tcPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("eventTime"));
+
+        tcEmail.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
+
+
+
+        tvCustomers.setItems(customerModel.getCustomers());
     }
 
 
