@@ -59,7 +59,7 @@ public class addEventController {
 
     private void cancel(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) btnCreateEvent.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/EventCoordinator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/EventCoordinator.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);

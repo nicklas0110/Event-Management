@@ -3,7 +3,6 @@ package GUI.controller.EventCoordinatorControllers;
 import BE.Event;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
-import GUI.controller.AdminControllers.EditEventCoordinatorController;
 import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -96,7 +95,7 @@ public class EventCoordinatorController  implements Initializable   {
 
     public void onActionAddEvent(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) btnAddEvent.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/addEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/addEvent.fxml"));
         switcher.setTitle("Add New Event");
         Scene scene = new Scene(root);
         switcher.setScene(scene);
@@ -104,7 +103,7 @@ public class EventCoordinatorController  implements Initializable   {
 
 
     public void onActionAddEvent() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCordinatorViews/editEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/editEvent.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Create Event");
         stage.setScene(new Scene(root));
@@ -147,7 +146,7 @@ public class EventCoordinatorController  implements Initializable   {
          if (selectedEvent != null) {
             Event selectedEvent = (Event) tvEvents.getSelectionModel().getSelectedItem();
 
-            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EventCordinatorViews/editEvent.fxml"));
+            FXMLLoader parent = new FXMLLoader(getClass().getResource("/GUI/View/EventCoordinatorViews/editEvent.fxml"));
             Scene mainWindowScene = null;
             try {
                 mainWindowScene = new Scene(parent.load());
