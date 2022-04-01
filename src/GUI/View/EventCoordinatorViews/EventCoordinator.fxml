@@ -20,14 +20,14 @@
                </font>
             </Text>
          </children></Pane>
-      <TableView fx:id="tvEvents" layoutY="130.0" prefHeight="398.0" prefWidth="986.0" style="-fx-background-color: Transparent; -fx-border-color: #ffe72f;">
+      <TableView fx:id="tvEvents" layoutY="130.0" prefHeight="398.0" prefWidth="986.0">
          <columns>
-            <TableColumn fx:id="tcId" prefWidth="120.0000319480896" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="ID" />
-            <TableColumn fx:id="tcEventName" prefWidth="137.60002899169922" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Event" />
-            <TableColumn fx:id="tcEventDate" prefWidth="135.99993896484375" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Date" />
-            <TableColumn fx:id="tcEventTime" prefWidth="134.39999389648438" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Start" />
-            <TableColumn fx:id="tcEventLocation" prefWidth="207.20000000000005" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Location" />
-            <TableColumn fx:id="tcEventInfo" prefWidth="246.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Event Info" />
+            <TableColumn fx:id="tcId" prefWidth="120.0000319480896" text="ID" />
+            <TableColumn fx:id="tcEventName" prefWidth="137.60002899169922" text="Event" />
+            <TableColumn fx:id="tcEventDate" prefWidth="135.99993896484375" text="Date" />
+            <TableColumn fx:id="tcEventTime" prefWidth="134.39999389648438" text="Start" />
+            <TableColumn fx:id="tcEventLocation" prefWidth="207.20000000000005" text="Location" />
+            <TableColumn fx:id="tcEventInfo" prefWidth="246.0" text="Event Info" />
          </columns>
          <effect>
             <DropShadow />

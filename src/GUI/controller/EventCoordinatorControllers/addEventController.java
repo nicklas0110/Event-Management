@@ -43,7 +43,7 @@ public class addEventController {
 
         uploadEventInfo(eventName, eventDate, eventTime, eventLocation, eventInfoText);
 
-        backEventCoordinatorWindow(actionEvent);
+        cancel(actionEvent);
     }
 
 
@@ -54,10 +54,10 @@ public class addEventController {
     }
 
     public void handleBtnBack(ActionEvent actionEvent) throws IOException {
-        backEventCoordinatorWindow(actionEvent);
+        cancel(actionEvent);
     }
 
-    private void backEventCoordinatorWindow(ActionEvent actionEvent) throws IOException {
+    private void cancel(ActionEvent actionEvent) throws IOException {
         Stage switcher = (Stage) btnCreateEvent.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/EventCoordinator.fxml"));
         Scene scene = new Scene(root);

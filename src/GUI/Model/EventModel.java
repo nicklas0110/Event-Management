@@ -46,16 +46,4 @@ public class EventModel {
         eventList.clear();
         eventList.addAll(eventManager.getAllEvents());
     }
-
-
-
-
-
-    /*
-    public List<Event> getEvents() {
-        List<Event> allEvents = eventManager.getEvents();
-        return allEvents;
-    }
-    
-     */
 }

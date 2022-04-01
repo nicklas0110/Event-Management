@@ -29,8 +29,7 @@ public class EditEventController {
 
     @FXML
     public Button btnEditEventCoordinator;
-    @FXML
-    public Button btnEditEvent;
+
     @FXML
     public Button btnBack;
 
@@ -41,17 +40,6 @@ public class EditEventController {
     public EditEventController() throws IOException {
     }
 
-
-    public void setSelectedEvent(Event event) throws Exception {
-        txtFieldEventName.setText(event.getEventName());
-        txtFieldEventDate.setText(event.getEventDate());
-        txtFieldEventTime.setText(event.getEventTime());
-        txtFieldEventLocation.setText(event.getEventLocation());
-        txtFieldEventInfo.setText(event.getEventInfo());
-        this.selectedEvent = event;
-    }
-
-    @FXML
     public void onActionSaveEvent(ActionEvent actionEvent) throws Exception {
         String updateEventName = txtFieldEventName.getText();
         String updateEventDate = txtFieldEventDate.getText();
@@ -67,11 +55,19 @@ public class EditEventController {
 
         eventModel.editEvents(this.selectedEvent);
 
+        // button backToEventcoordinatorWindow
         backToEventcoordinatorWindow(actionEvent);
 
     }
 
-
+    public void setSelectedEvent(Event event) throws Exception {
+        txtFieldEventName.setText(event.getEventName());
+        txtFieldEventDate.setText(event.getEventDate());
+        txtFieldEventTime.setText(event.getEventTime());
+        txtFieldEventLocation.setText(event.getEventLocation());
+        txtFieldEventInfo.setText(event.getEventInfo());
+        this.selectedEvent = event;
+    }
 
     @FXML
     public void handleBtnBack(ActionEvent actionEvent) throws IOException {

@@ -46,7 +46,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtFieldEventTime" layoutX="228.0" layoutY="230.0" prefHeight="38.0" prefWidth="314.0" promptText="Event Time" style="-fx-border-color: white;">
+      <TextField fx:id="txtFieldEventTime" layoutX="228.0" layoutY="230.0" prefHeight="38.0" prefWidth="314.0" promptText="HR. MIN.  SEC" style="-fx-border-color: white;">
          <effect>
             <DropShadow height="17.28" radius="6.75" width="11.72">
                <color>
@@ -90,19 +90,28 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnEditEventCoordinator" layoutX="414.0" layoutY="459.0" mnemonicParsing="false" onAction="#onActionSaveEvent" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="EditEvent" textFill="WHITE">
+      <Button fx:id="btnEditEventCoordinator" layoutX="414.0" layoutY="459.0" mnemonicParsing="false" onAction="#onActionSaveEvent" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="Edit Event" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
       <Button fx:id="btnBack" layoutX="243.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleBtnBack" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #00CBD6;" text="Back" textFill="WHITE">
          <effect>
             <DropShadow />
          </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
-      <TextArea fx:id="txtFieldEventInfo" layoutX="85.0" layoutY="336.0" prefHeight="97.0" prefWidth="464.0" promptText="Write information about the event" style="-fx-border-color: #ffe72f;" />
+      <TextArea fx:id="txtFieldEventInfo" layoutX="86.0" layoutY="336.0" prefHeight="97.0" prefWidth="464.0" promptText="Write information about the event." style="-fx-border-color: #ffe72f;">
+         <font>
+            <Font size="16.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>
