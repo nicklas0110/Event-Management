@@ -21,4 +21,9 @@ public class CustomerModel {
         customerList = customerManagerLm.getCustomers();
         return customerList;
     }
+
+    public void removeCustomer(Customer selectedCustomer) {
+        customerManagerLm.removeCustomer(selectedCustomer);
+        customerList.remove(selectedCustomer);
+    }
 }

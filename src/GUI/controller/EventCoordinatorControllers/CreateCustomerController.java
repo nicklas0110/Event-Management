@@ -3,6 +3,7 @@ package GUI.controller.EventCoordinatorControllers;
 import BE.Customer;
 import GUI.Model.CustomerModel;
 import GUI.Model.EventCoordinatorModel;
+import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import javafx.event.ActionEvent;
@@ -23,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class CreateCustomerController implements Initializable {
     public CustomerModel customerModel;
+    public Customer selectedCustomer;
 
 
     public TableView<Customer> tvCustomers;
@@ -73,6 +75,9 @@ public class CreateCustomerController implements Initializable {
     }
 
     public void deleteCustomerBtn(ActionEvent event) {
+        if (SimpleDialogController.delete() && selectedCustomer != null) {
+            customerModel.removeCustomer(selectedCustomer);
+        }
     }
 
     public void EditCustomerBtn(ActionEvent event) {

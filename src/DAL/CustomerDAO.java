@@ -63,4 +63,22 @@ public class CustomerDAO {
         }
         return (Customer) allCustomer;
     }
+
+    public void removeCustomer(Customer selectedCustomer) {
+        String sql1 = "DELETE FROM UserTable WHERE UserID = (?);";
+
+        try (Connection connection = DC.getConnection()) {
+            PreparedStatement ps1 = connection.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
+
+            ps1.setInt(1, selectedCustomer.getId());
+
+            ps1.executeUpdate();
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

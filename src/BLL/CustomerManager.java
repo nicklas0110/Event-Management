@@ -31,4 +31,8 @@ public class CustomerManager {
         }
         return customers;
     }
+
+    public void removeCustomer(Customer selectedCustomer) {
+        customerDAO.removeCustomer(selectedCustomer);
+    }
 }
