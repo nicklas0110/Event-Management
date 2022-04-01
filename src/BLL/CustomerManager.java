@@ -17,8 +17,8 @@ public class CustomerManager {
     public CustomerManager() throws IOException {
     }
 
-    public Customer addCustomer(String name, String lastName, String phoneNumber, String email) throws SQLException {
-        return (customerDAO.addCustomer(name, lastName, phoneNumber,email));
+    public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
+        return (customerDAO.addCustomer(name, lastName, phoneNumber,email,uploadOver12År));
     }
 
     public ObservableList<Customer> getCustomers() {

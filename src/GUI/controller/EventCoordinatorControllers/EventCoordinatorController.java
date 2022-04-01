@@ -44,6 +44,8 @@ public class EventCoordinatorController  implements Initializable   {
     public JFXButton btnEditEvent;
     @FXML
     public JFXButton btnDeleteEvent;
+    @FXML
+    public JFXButton btnUserInfo;
 
     @FXML
     private Button onActionAddEvent;
@@ -196,6 +198,14 @@ public class EventCoordinatorController  implements Initializable   {
             selectedEvent = tvEvents.getSelectionModel().getSelectedItem();
         }
 
+    }
+
+    public void UserInfoBtn(ActionEvent event) throws IOException {
+        Stage switcher = (Stage) btnUserInfo.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
+        switcher.setTitle("Add New Event");
+        Scene scene = new Scene(root);
+        switcher.setScene(scene);
     }
 
 

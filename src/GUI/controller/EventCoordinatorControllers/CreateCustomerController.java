@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -43,6 +44,7 @@ public class CreateCustomerController implements Initializable {
     public JFXButton btnBack;
     public JFXButton deleteCustomer;
     public JFXButton editCustomer;
+    public CheckBox checkBoxOver12År;
 
 
     @Override
@@ -61,13 +63,14 @@ public class CreateCustomerController implements Initializable {
         String uploadLastName = customerLastNameTxt.getText().replaceAll(" ", "");
         String uploadPhoneNumber = customerPhoneNumberTxt.getText().replaceAll(" ", "");
         String uploadEmail = customerEmailTxt.getText().replaceAll(" ", "");
-        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail);
+        Boolean uploadOver12År = checkBoxOver12År.isSelected();
+        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail,uploadOver12År);
     }
 
-    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email) throws SQLException {
+    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
         CustomerModel customerModel = new CustomerModel();
 
-        customerModel.addCustomer(name, lastName, phoneNumber, email);
+        customerModel.addCustomer(name, lastName, phoneNumber, email,uploadOver12År);
     }
 
     public void handleBtnBack(ActionEvent event) throws IOException {
@@ -96,16 +99,15 @@ public class CreateCustomerController implements Initializable {
      */
     private void setCustomersView() throws IOException {
 
-        tcCustomerID.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+        tcCustomerID.setCellValueFactory(new PropertyValueFactory<>("id"));
 
-        tcFirstName.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+        tcFirstName.setCellValueFactory(new PropertyValueFactory<>("Name"));
 
-        tcLastName.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
+        tcLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 
-        tcPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("eventTime"));
+        tcPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 
-        tcEmail.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
-
+        tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
         tvCustomers.setItems(customerModel.getCustomers());

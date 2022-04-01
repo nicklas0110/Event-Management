@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -43,7 +44,7 @@
       </TableView>
       <Pane layoutX="14.0" layoutY="68.0" prefHeight="306.0" prefWidth="213.0" style="-fx-border-color: #543f3f; -fx-border-width: 0.5px;">
          <children>
-            <JFXButton fx:id="addCustomer" buttonType="RAISED" layoutX="31.0" layoutY="241.0" onAction="#addCustomerBtn" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Add Customer" textFill="WHITE" />
+            <JFXButton fx:id="addCustomer" buttonType="RAISED" layoutX="31.0" layoutY="257.0" onAction="#addCustomerBtn" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Add Customer" textFill="WHITE" />
             <TextField fx:id="customerNameTxt" layoutX="31.0" layoutY="65.0" prefHeight="29.0" prefWidth="149.0" promptText="First Name">
                <opaqueInsets>
                   <Insets right="12.0" top="12.0" />
@@ -56,6 +57,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <CheckBox fx:id="checkBoxOver12År" layoutX="69.0" layoutY="229.0" mnemonicParsing="false" text="Over 12 år " />
          </children>
       </Pane>
       <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="862.0" layoutY="538.0" onAction="#handleBtnBack" prefHeight="34.0" prefWidth="131.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Back">

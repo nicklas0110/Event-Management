@@ -1,19 +1,21 @@
 package BE;
 
 public class Customer {
+
     private int id;
     private String Name;
     private String lastName;
     private String phoneNumber;
     private String email;
+    private Boolean over12YearsOld;
 
-
-    public Customer(int id, String name, String lastName, String phoneNumber, String email) {''
+    public Customer(int id, String name, String lastName, String phoneNumber, String email, Boolean over12YearsOld) {
         this.id = id;
         Name = name;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.over12YearsOld = over12YearsOld;
     }
 
     public int getId() {
@@ -54,5 +56,13 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getOver12YearsOld() {
+        return over12YearsOld;
+    }
+
+    public void setOver12YearsOld(Boolean over12YearsOld) {
+        this.over12YearsOld = over12YearsOld;
     }
 }
