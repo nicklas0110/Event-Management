@@ -137,6 +137,8 @@ public class EventCoordinatorController  implements Initializable   {
 
         tcEventLocation.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
 
+        tcEventInfo.setCellValueFactory(new PropertyValueFactory<>("eventInfo"));
+
         tvEvents.setItems(eventModel.getAllEvents());
     }
 

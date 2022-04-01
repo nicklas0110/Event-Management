@@ -12,27 +12,28 @@
 
 <AnchorPane prefHeight="595.0" prefWidth="599.0" stylesheets="@../stylesheet/eventCoordinator.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.EventCoordinatorControllers.EventCoordinatorController">
    <children>
-      <Pane fx:id="paneEventC" prefHeight="132.0" prefWidth="739.0">
+      <Pane fx:id="paneEventC" prefHeight="132.0" prefWidth="986.0">
          <children>
-            <Text fx:id="eventTitle" fill="WHITE" fontSmoothingType="LCD" layoutX="9.0" layoutY="77.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Coordinator" textAlignment="CENTER" wrappingWidth="721.7999267578125">
+            <Text fx:id="eventTitle" fill="WHITE" fontSmoothingType="LCD" layoutX="132.0" layoutY="85.0" strokeType="INSIDE" strokeWidth="0.0" text="Event Coordinator" textAlignment="CENTER" wrappingWidth="721.7999267578125">
                <font>
                   <Font size="48.0" />
                </font>
             </Text>
          </children></Pane>
-      <TableView fx:id="tvEvents" layoutY="130.0" prefHeight="398.0" prefWidth="739.0" style="-fx-background-color: Transparent; -fx-border-color: #ffe72f;">
+      <TableView fx:id="tvEvents" layoutY="130.0" prefHeight="398.0" prefWidth="986.0" style="-fx-background-color: Transparent; -fx-border-color: #ffe72f;">
          <columns>
             <TableColumn fx:id="tcId" prefWidth="120.0000319480896" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="ID" />
             <TableColumn fx:id="tcEventName" prefWidth="137.60002899169922" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Event" />
             <TableColumn fx:id="tcEventDate" prefWidth="135.99993896484375" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Date" />
             <TableColumn fx:id="tcEventTime" prefWidth="134.39999389648438" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Start" />
             <TableColumn fx:id="tcEventLocation" prefWidth="207.20000000000005" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Location" />
+            <TableColumn fx:id="tcEventInfo" prefWidth="246.0" style="-fx-background-color: #ffe72f; -fx-border-color: white;" text="Event Info" />
          </columns>
          <effect>
             <DropShadow />
          </effect>
       </TableView>
-      <JFXButton fx:id="btnLogOuteventCoordinator" buttonType="RAISED" layoutX="606.0" layoutY="548.0" onAction="#ButtonLogOutFromEventCoordinator" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Log out">
+      <JFXButton fx:id="btnLogOuteventCoordinator" buttonType="RAISED" layoutX="840.0" layoutY="548.0" onAction="#ButtonLogOutFromEventCoordinator" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Log out">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
