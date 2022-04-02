@@ -46,6 +46,9 @@ public class CreateCustomerController implements Initializable {
     public JFXButton editCustomer;
     public CheckBox checkBoxOver12År;
 
+    public CreateCustomerController() {
+        customerModel = new CustomerModel();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -62,15 +65,22 @@ public class CreateCustomerController implements Initializable {
         String uploadName = customerNameTxt.getText().replaceAll(" ", "");
         String uploadLastName = customerLastNameTxt.getText().replaceAll(" ", "");
         String uploadPhoneNumber = customerPhoneNumberTxt.getText().replaceAll(" ", "");
+        uploadPhoneNumber = uploadPhoneNumber.replaceAll(" ", "");
+        uploadPhoneNumber = uploadPhoneNumber.replaceAll("\\+", "");
+        uploadPhoneNumber = uploadPhoneNumber.replaceAll("-", "");
         String uploadEmail = customerEmailTxt.getText().replaceAll(" ", "");
-        Boolean uploadOver12År = checkBoxOver12År.isSelected();
-        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail,uploadOver12År);
+        boolean uploadOver12År = checkBoxOver12År.isSelected();
+        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail, uploadOver12År);
     }
 
-    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
-        CustomerModel customerModel = new CustomerModel();
-
-        customerModel.addCustomer(name, lastName, phoneNumber, email,uploadOver12År);
+    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, boolean uploadOver12År) throws SQLException {
+        customerModel.addCustomer(name, lastName, phoneNumber, email, uploadOver12År);
+        customerNameTxt.clear();
+        customerLastNameTxt.clear();
+        customerPhoneNumberTxt.clear();
+        customerEmailTxt.clear();
+        checkBoxOver12År.setSelected(false);
+        tvCustomers.refresh();
     }
 
     public void handleBtnBack(ActionEvent event) throws IOException {
@@ -94,7 +104,8 @@ public class CreateCustomerController implements Initializable {
         switcher.setScene(scene);
     }
 
-    /**m
+    /**
+     * m
      * Method used for initializing the Customers table.
      */
     private void setCustomersView() throws IOException {

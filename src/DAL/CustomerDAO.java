@@ -21,49 +21,54 @@ public class CustomerDAO {
     public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
         // This is the method to create a EventCoordinator in the Database. This is also where the EventCoordinator gets an ID.
 
+        try (Connection connection = DC.getConnection()) {
+            String sql = "INSERT INTO CustomerTable (NameCustomer,LastNameCustomer,PhoneNumberCustomer, EmailCustomer,is_checked,Customer) VALUES (?,?,?,?,?,?);";
 
-        Connection con = DC.getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
+            ps.setString(1, name);
+            ps.setString(2, lastName);
+            ps.setInt(3, Integer.parseInt(phoneNumber));
+            ps.setString(4, email);
+            ps.setBoolean(5,uploadOver12År);
+            ps.setString(6,"Customer");
 
-        String sql = "INSERT INTO CustomerTable (NameCustomer,LastNameCustomer,PhoneNumberCustomer, EmailCustomer,is_checked) VALUES (?,?,?,?,?,?);";
-
-        PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
-        ps.setString(1, name);
-        ps.setString(2, lastName);
-        ps.setInt(3, Integer.parseInt(phoneNumber));
-        ps.setString(4, email);
-        ps.setBoolean(5,uploadOver12År);
-        ps.setString(6,"Customer");
-
-        int affectedRows = ps.executeUpdate();
-        if (affectedRows == 1) {
+            ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
-            if (rs.next()) {
-                int id = rs.getInt(1);
-                return new Customer(id, name, lastName, phoneNumber, email,uploadOver12År);
-            }
-
+                if (rs.next()) {
+                    int id = rs.getInt(1);
+                    return new Customer(id, name, lastName, phoneNumber, email,uploadOver12År);
+                }
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return null;
     }
 
-    public Customer getAllCustomers() throws SQLException {
-        Connection con = DC.getConnection();
-
+    public List<Customer> getAllCustomers() throws SQLException {
         List<Customer> allCustomer = new ArrayList<>();
+        try (Connection connection = DC.getConnection()) {
 
 
-        String sql = "SELECT * FROM CustomerTable WHERE Customer = 'Customer'";
-        Statement statement = con.createStatement();
-        ResultSet rs = statement.executeQuery(sql);
-        while (rs.next()) { // Creates and adds song objects into an array list
-            Customer customer = new Customer(rs.getInt("id"), rs.getString("name"),
-                    rs.getString("lastName"),rs.getString("phoneNumber"),rs.getString("email"),
-                    rs.getBoolean("over12YearsOld"));
-            allCustomer.add(customer);
+            String sql = "SELECT * FROM CustomerTable WHERE Customer = 'Customer'";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) { // Creates and adds song objects into an array list
+                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                        rs.getString("LastNameCustomer"),rs.getString("PhoneNumberCustomer"),rs.getString("EmailCustomer"),
+                        rs.getBoolean("is_checked"));
+                allCustomer.add(customer);
+            }
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-        return (Customer) allCustomer;
+
+        return allCustomer;
     }
 
     public void removeCustomer(Customer selectedCustomer) {
