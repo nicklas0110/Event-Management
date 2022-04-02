@@ -44,6 +44,8 @@ public class EventCoordinatorController  implements Initializable   {
     public JFXButton btnEditEvent;
     @FXML
     public JFXButton btnDeleteEvent;
+    @FXML
+    public JFXButton btnUserInfo;
 
     @FXML
     private Button onActionAddEvent;
@@ -160,7 +162,23 @@ public class EventCoordinatorController  implements Initializable   {
              EditEventController editEventController = parent.getController();
              editEventController.setSelectedEvent(selectedEvent);
              editEventCoordinatorStage.show();
+
+
+
+
+            /*Stage editEventStage;
+            editEventStage = new Stage();
+            editEventStage.setScene(mainWindowScene);
+            EditEventController editEventController = parent.getController();
+            editEventController.setSelectedEvent(selectedEvent);
+            editEventStage.show();
+            editEventStage.setOnHiding(event ->
+            {
+            });
+
+         */
         }
+
 
     }
 
@@ -181,5 +199,39 @@ public class EventCoordinatorController  implements Initializable   {
         }
 
     }
+
+    public void UserInfoBtn(ActionEvent event) throws IOException {
+        Stage switcher = (Stage) btnUserInfo.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
+        switcher.setTitle("Add New Event");
+        Scene scene = new Scene(root);
+        switcher.setScene(scene);
+    }
+
+
+
+/*
+    @Override
+
+    public void initialize(URL location, ResourceBundle resources) {
+        selectedEvent();
+
+        tcId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tcEventName.setCellValueFactory(new PropertyValueFactory<>("EventName"));
+        tcEventDate.setCellValueFactory(new PropertyValueFactory<>("EventDate"));
+        tcEventLocation.setCellValueFactory(new PropertyValueFactory<>("EventLocation"));
+        tcEventTime.setCellValueFactory(new PropertyValueFactory<>("EventTime"));
+        tcEventInfo.setCellValueFactory(new PropertyValueFactory<>("EventInfo"));
+
+        try {
+            allEvents = FXCollections.observableArrayList(eventModel.getEvents());
+            tableViewLoadEvents(allEvents);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+ */
+
 
 }
