@@ -72,7 +72,7 @@ public class CustomerDAO {
     }
 
     public void removeCustomer(Customer selectedCustomer) {
-        String sql1 = "DELETE FROM CustomerTable WHERE ID = (?);";
+        String sql1 = "DELETE FROM CustomerTable WHERE Id = (?);";
 
         try (Connection connection = DC.getConnection()) {
             PreparedStatement ps1 = connection.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);

@@ -16,6 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -57,6 +58,9 @@ public class CreateCustomerController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        tvCustomers.setOnMouseClicked((MouseEvent event) -> {
+            setSelectedItems();
+        });
 
     }
 
@@ -90,6 +94,7 @@ public class CreateCustomerController implements Initializable {
     public void deleteCustomerBtn(ActionEvent event) {
         if (SimpleDialogController.delete() && selectedCustomer != null) {
             customerModel.removeCustomer(selectedCustomer);
+            tvCustomers.refresh();
         }
     }
 
@@ -122,6 +127,18 @@ public class CreateCustomerController implements Initializable {
 
 
         tvCustomers.setItems(customerModel.getCustomers());
+    }
+
+
+    /**
+     * Changes selected Name  in the adminEventMangerTableViewName
+     */
+    private void setSelectedItems() {
+        if (tvCustomers.getSelectionModel().getSelectedItem() != null)
+        {
+            selectedCustomer = tvCustomers.getSelectionModel().getSelectedItem();
+        }
+
     }
 
 
