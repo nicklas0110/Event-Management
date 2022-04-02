@@ -30,16 +30,16 @@
                </font></Text>
          </children>
       </Pane>
-      <TableView fx:id="tvCustomers" cache="true" layoutX="280.0" layoutY="135.0" prefHeight="356.0" prefWidth="700.0" style="-fx-background-color: transparent;">
+      <TableView fx:id="tvCustomers" cache="true" layoutX="280.0" layoutY="135.0" prefHeight="356.0" prefWidth="700.0">
          <columns>
-            <TableColumn fx:id="tcCustomerID" prefWidth="51.999908447265625" text="ID" />
-            <TableColumn fx:id="tcFirstName" prefWidth="143.20004272460938" text="First Name" />
+            <TableColumn fx:id="tcCustomerID" prefWidth="62.399993896484375" text="ID" />
+            <TableColumn fx:id="tcFirstName" prefWidth="133.60003662109375" text="First Name" />
             <TableColumn fx:id="tcLastName" prefWidth="154.39996337890625" text="Last Name" />
             <TableColumn fx:id="tcPhoneNumber" minWidth="5.5999755859375" prefWidth="161.3333740234375" text="Phone Number" />
             <TableColumn fx:id="tcEmail" prefWidth="192.2667236328125" text="Email" />
          </columns>
          <effect>
-            <DropShadow />
+            <DropShadow blurType="ONE_PASS_BOX" height="17.52" radius="12.64" width="35.04" />
          </effect>
       </TableView>
       <Pane layoutX="14.0" layoutY="68.0" prefHeight="306.0" prefWidth="213.0" style="-fx-border-color: #543f3f; -fx-border-width: 0.5px;">
