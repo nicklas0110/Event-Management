@@ -69,6 +69,4 @@ public class Event {
     public void setEventInfo(String eventInfo) {
         EventInfo = eventInfo;
     }
-
-
 }
