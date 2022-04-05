@@ -6,12 +6,14 @@ public class Ticket {
     private String ticketType;
     private int eventID;
     private int customerID;
+    private String ticketPicture;
 
-    public Ticket(int ticketID, String ticketType, int eventID, int customerID) {
+    public Ticket(int ticketID, String ticketType, int eventID, int customerID, String ticketPicture) {
         this.ticketID = ticketID;
         this.ticketType = ticketType;
         this.eventID = eventID;
         this.customerID = customerID;
+        this.ticketPicture = ticketPicture;
     }
 
     public int getTicketID() {
@@ -44,5 +46,13 @@ public class Ticket {
 
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
+    }
+
+    public String getTicketPicture() {
+        return ticketPicture;
+    }
+
+    public void setTicketPicture(String ticketPicture) {
+        this.ticketPicture = ticketPicture;
     }
 }
