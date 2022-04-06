@@ -2,21 +2,22 @@ package GUI.controller.EventCoordinatorControllers;
 
 import BE.Customer;
 import GUI.Model.CustomerModel;
-import GUI.Model.EventCoordinatorModel;
 import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,6 +28,9 @@ import java.util.ResourceBundle;
 public class CreateCustomerController implements Initializable {
     public CustomerModel customerModel;
     public Customer selectedCustomer;
+    public PieChart overOrUnder12YearsPieChart;
+    private int over12;
+    private int under12;
 
 
     public TableView<Customer> tvCustomers;
@@ -45,7 +49,10 @@ public class CreateCustomerController implements Initializable {
     public JFXButton btnBack;
     public JFXButton deleteCustomer;
     public JFXButton editCustomer;
-    public CheckBox checkBoxOver12År;
+    public CheckBox checkBoxOver12Years;
+
+    public Text under12YearsTxt;
+    public Text over12YearsTxt;
 
     public CreateCustomerController() {
         customerModel = new CustomerModel();
@@ -55,6 +62,7 @@ public class CreateCustomerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             setCustomersView();
+            setAge();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,8 +81,9 @@ public class CreateCustomerController implements Initializable {
         uploadPhoneNumber = uploadPhoneNumber.replaceAll("\\+", "");
         uploadPhoneNumber = uploadPhoneNumber.replaceAll("-", "");
         String uploadEmail = customerEmailTxt.getText().replaceAll(" ", "");
-        boolean uploadOver12År = checkBoxOver12År.isSelected();
+        boolean uploadOver12År = checkBoxOver12Years.isSelected();
         uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail, uploadOver12År);
+        setAge();
     }
 
     private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, boolean uploadOver12År) throws SQLException {
@@ -83,7 +92,7 @@ public class CreateCustomerController implements Initializable {
         customerLastNameTxt.clear();
         customerPhoneNumberTxt.clear();
         customerEmailTxt.clear();
-        checkBoxOver12År.setSelected(false);
+        checkBoxOver12Years.setSelected(false);
         tvCustomers.refresh();
     }
 
@@ -127,6 +136,7 @@ public class CreateCustomerController implements Initializable {
 
 
         tvCustomers.setItems(customerModel.getCustomers());
+
     }
 
 
@@ -134,11 +144,47 @@ public class CreateCustomerController implements Initializable {
      * Changes selected Name  in the adminEventMangerTableViewName
      */
     private void setSelectedItems() {
-        if (tvCustomers.getSelectionModel().getSelectedItem() != null)
-        {
+        if (tvCustomers.getSelectionModel().getSelectedItem() != null) {
             selectedCustomer = tvCustomers.getSelectionModel().getSelectedItem();
         }
 
+    }
+
+    public int setAgeOver12() {
+        over12 = customerModel.getAgeUnderOrOver12(true);
+        return over12;
+    }
+
+    public int setAgeUnder12() {
+        under12 = customerModel.getAgeUnderOrOver12(false);
+        return under12;
+    }
+
+    public void setAge() {
+        String under12InProcentString = "", over12InProcentString = "";
+        setAgeOver12();
+        setAgeUnder12();
+        int total = under12 + over12;
+        if(total > 0){
+            double under12Procent =(Double.valueOf(under12) / total) * 100;
+            double over12Procent = (over12 / Double.valueOf(total)) * 100; //Dividing 2 ints did not allow < 0, if casting 1 to double then it worked...
+            under12InProcentString = "(" + under12Procent + "%)";
+            over12InProcentString = "(" + over12Procent + "%)";
+        }
+        under12YearsTxt.setText(under12 + " " + under12InProcentString);
+        over12YearsTxt.setText(over12 + " " + over12InProcentString);
+
+        initPieChartUnderAndOver12();
+    }
+
+    public void initPieChartUnderAndOver12() {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Under 12", under12),
+                        new PieChart.Data("Over 12", over12)
+                );
+        overOrUnder12YearsPieChart.setTitle("Aldersfordeling");
+        overOrUnder12YearsPieChart.setData(pieChartData);
     }
 
 

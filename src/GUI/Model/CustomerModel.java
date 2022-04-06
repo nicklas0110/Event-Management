@@ -36,4 +36,19 @@ public class CustomerModel {
         customerManagerLm.removeCustomer(selectedCustomer);
         customerList.remove(selectedCustomer);
     }
+
+    public ObservableList getAgeOver12() {
+        customerList = customerManagerLm.getAgeOver12();
+        return customerList;
+    }
+
+    public int getAgeUnderOrOver12(Boolean isOver) {
+        int count = 0;
+        for(Customer customer : customerList){
+            if(customer.getOver12YearsOld() == isOver){
+                count++;
+            }
+        }
+        return count;
+    }
 }

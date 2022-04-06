@@ -35,4 +35,26 @@ public class CustomerManager {
     public void removeCustomer(Customer selectedCustomer) {
         customerDAO.removeCustomer(selectedCustomer);
     }
+
+    public ObservableList<Customer> getAgeOver12() {
+        ObservableList<Customer> customers = FXCollections.observableArrayList();
+
+        try {
+            customers.addAll(customerDAO.getAgeOver12());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return customers;
+    }
+
+    public ObservableList<Customer> getAgeUnder12() {
+        ObservableList<Customer> customers = FXCollections.observableArrayList();
+
+        try {
+            customers.addAll(customerDAO.getAgeUnder12());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return customers;
+    }
 }

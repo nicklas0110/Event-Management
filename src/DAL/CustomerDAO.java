@@ -30,15 +30,15 @@ public class CustomerDAO {
             ps.setString(2, lastName);
             ps.setInt(3, Integer.parseInt(phoneNumber));
             ps.setString(4, email);
-            ps.setBoolean(5,uploadOver12År);
-            ps.setString(6,"Customer");
+            ps.setBoolean(5, uploadOver12År);
+            ps.setString(6, "Customer");
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
-                if (rs.next()) {
-                    int id = rs.getInt(1);
-                    return new Customer(id, name, lastName, phoneNumber, email,uploadOver12År);
-                }
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                return new Customer(id, name, lastName, phoneNumber, email, uploadOver12År);
+            }
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         } catch (SQLException throwables) {
@@ -57,7 +57,7 @@ public class CustomerDAO {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) { // Creates and adds song objects into an array list
                 Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
-                        rs.getString("LastNameCustomer"),rs.getString("PhoneNumberCustomer"),rs.getString("EmailCustomer"),
+                        rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
                         rs.getBoolean("is_checked"));
                 allCustomer.add(customer);
             }
@@ -86,6 +86,54 @@ public class CustomerDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public Customer getAgeOver12() {
+        List<Customer> ageOver12 = new ArrayList<>();
+        try (Connection connection = DC.getConnection()) {
+
+
+            String sql = "SELECT * FROM CustomerTable WHERE is_checked = '1'";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) { // Creates and adds song objects into an array list
+                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                        rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
+                        rs.getBoolean("is_checked"));
+                ageOver12.add(customer);
+            }
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return (Customer) ageOver12;
+    }
+
+    public Customer getAgeUnder12() {
+        List<Customer> ageUnder12 = new ArrayList<>();
+        try (Connection connection = DC.getConnection()) {
+
+
+            String sql = "SELECT * FROM CustomerTable WHERE is_checked = '0'";
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) { // Creates and adds song objects into an array list
+                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                        rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
+                        rs.getBoolean("is_checked"));
+                ageUnder12.add(customer);
+            }
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return (Customer) ageUnder12;
     }
 
 }
