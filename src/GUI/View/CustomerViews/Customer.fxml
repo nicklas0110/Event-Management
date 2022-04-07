@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.UserConrollers.CustomerController">
    <children>
-      <JFXButton fx:id="myTickets" layoutX="169.0" layoutY="548.0" onAction="#myTicketsBtn" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="My Tickets" textFill="WHITE">
+      <JFXButton fx:id="myTickets" layoutX="34.0" layoutY="548.0" onAction="#myTicketsBtn" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="My Tickets" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -26,7 +26,7 @@
         </columns>
       </TableView>
       <JFXButton fx:id="logOutCustomer" buttonType="RAISED" layoutX="774.0" layoutY="548.0" onAction="#logOutCustomerBtn" prefHeight="34.0" prefWidth="118.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="LogOut" />
-      <JFXButton fx:id="buyTickets" layoutX="34.0" layoutY="548.0" onAction="#buyTicketsBtn" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="Buy Tickets" textFill="WHITE">
+      <JFXButton fx:id="eventInfo" layoutX="169.0" layoutY="548.0" onAction="#eventInfoBtn" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #00CBD6;" text="Event Info+" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
