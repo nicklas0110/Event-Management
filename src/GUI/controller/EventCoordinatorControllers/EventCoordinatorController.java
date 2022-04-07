@@ -1,6 +1,7 @@
 package GUI.controller.EventCoordinatorControllers;
 
 import BE.Event;
+import GUI.Model.CustomerModel;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
 import GUI.controller.SimpleDialogController;
@@ -199,6 +200,7 @@ public class EventCoordinatorController  implements Initializable   {
         }
 
     }
+
 
     public void UserInfoBtn(ActionEvent event) throws IOException {
         Stage switcher = (Stage) btnUserInfo.getScene().getWindow();

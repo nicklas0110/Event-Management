@@ -56,7 +56,7 @@ public class CustomerDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) { // Creates and adds song objects into an array list
-                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                Customer customer = new Customer(rs.getInt("CustomerID"), rs.getString("NameCustomer"),
                         rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
                         rs.getBoolean("is_checked"));
                 allCustomer.add(customer);
@@ -97,7 +97,7 @@ public class CustomerDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) { // Creates and adds song objects into an array list
-                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                Customer customer = new Customer(rs.getInt("CustomerID"), rs.getString("NameCustomer"),
                         rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
                         rs.getBoolean("is_checked"));
                 ageOver12.add(customer);
@@ -121,7 +121,7 @@ public class CustomerDAO {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) { // Creates and adds song objects into an array list
-                Customer customer = new Customer(rs.getInt("id"), rs.getString("NameCustomer"),
+                Customer customer = new Customer(rs.getInt("CustomerID"), rs.getString("NameCustomer"),
                         rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
                         rs.getBoolean("is_checked"));
                 ageUnder12.add(customer);
