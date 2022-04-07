@@ -17,15 +17,15 @@ public class CustomerManager {
     public CustomerManager() throws IOException {
     }
 
-    public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
-        return (customerDAO.addCustomer(name, lastName, phoneNumber,email,uploadOver12År));
+    public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År, int eventID) throws SQLException {
+        return (customerDAO.addCustomer(name, lastName, phoneNumber,email,uploadOver12År, eventID));
     }
 
-    public ObservableList<Customer> getCustomers() {
+    public ObservableList<Customer> getCustomers(int eventID) {
         ObservableList<Customer> customers = FXCollections.observableArrayList();
 
         try {
-            customers.addAll(customerDAO.getAllCustomers());
+            customers.addAll(customerDAO.getAllCustomers(eventID));
         } catch (Exception e) {
             e.printStackTrace();
         }

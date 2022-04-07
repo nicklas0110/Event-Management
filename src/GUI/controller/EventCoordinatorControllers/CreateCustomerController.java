@@ -1,6 +1,7 @@
 package GUI.controller.EventCoordinatorControllers;
 
 import BE.Customer;
+import BE.Event;
 import GUI.Model.CustomerModel;
 import GUI.controller.SimpleDialogController;
 import com.jfoenix.controls.JFXButton;
@@ -29,6 +30,7 @@ public class CreateCustomerController implements Initializable {
     public CustomerModel customerModel;
     public Customer selectedCustomer;
     public PieChart overOrUnder12YearsPieChart;
+    public Text eventNameTxt;
     private int over12;
     private int under12;
 
@@ -54,22 +56,17 @@ public class CreateCustomerController implements Initializable {
     public Text under12YearsTxt;
     public Text over12YearsTxt;
 
+    private Event selectedEvent;
+
     public CreateCustomerController() {
         customerModel = new CustomerModel();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
-            setCustomersView();
-            setAge();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         tvCustomers.setOnMouseClicked((MouseEvent event) -> {
             setSelectedItems();
         });
-
     }
 
 
@@ -82,12 +79,12 @@ public class CreateCustomerController implements Initializable {
         uploadPhoneNumber = uploadPhoneNumber.replaceAll("-", "");
         String uploadEmail = customerEmailTxt.getText().replaceAll(" ", "");
         boolean uploadOver12År = checkBoxOver12Years.isSelected();
-        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail, uploadOver12År);
+        uploadCustomerInfo(uploadName, uploadLastName, uploadPhoneNumber, uploadEmail, uploadOver12År, selectedEvent.getEventId());
         setAge();
     }
 
-    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, boolean uploadOver12År) throws SQLException {
-        customerModel.addCustomer(name, lastName, phoneNumber, email, uploadOver12År);
+    private void uploadCustomerInfo(String name, String lastName, String phoneNumber, String email, boolean uploadOver12År, int eventID) throws SQLException {
+        customerModel.addCustomer(name, lastName, phoneNumber, email, uploadOver12År, eventID);
         customerNameTxt.clear();
         customerLastNameTxt.clear();
         customerPhoneNumberTxt.clear();
@@ -135,7 +132,7 @@ public class CreateCustomerController implements Initializable {
         tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
-        tvCustomers.setItems(customerModel.getCustomers());
+        tvCustomers.setItems(customerModel.getCustomers(selectedEvent.getEventId()));
 
     }
 
@@ -166,8 +163,8 @@ public class CreateCustomerController implements Initializable {
         setAgeUnder12();
         int total = under12 + over12;
         if(total > 0){
-            double under12Procent =(Double.valueOf(under12) / total) * 100;
-            double over12Procent = (over12 / Double.valueOf(total)) * 100; //Dividing 2 ints did not allow < 0, if casting 1 to double then it worked...
+            double under12Procent = Math.round((Double.valueOf(under12) / total) * 100);
+            double over12Procent = Math.round((over12 / Double.valueOf(total)) * 100); //Dividing 2 ints did not allow < 0, if casting 1 to double then it worked...
             under12InProcentString = "(" + under12Procent + "%)";
             over12InProcentString = "(" + over12Procent + "%)";
         }
@@ -187,5 +184,14 @@ public class CreateCustomerController implements Initializable {
         overOrUnder12YearsPieChart.setData(pieChartData);
     }
 
-
+    public void setEventID(Event event){
+        selectedEvent = event;
+        eventNameTxt.setText(event.getEventName());
+        try {
+            setCustomersView();
+            setAge();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

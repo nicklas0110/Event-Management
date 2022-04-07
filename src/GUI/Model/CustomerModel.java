@@ -23,12 +23,12 @@ public class CustomerModel {
         }
     }
 
-    public void addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
-        customerList.add(customerManagerLm.addCustomer(name, lastName, phoneNumber, email,uploadOver12År));
+    public void addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År, int eventID) throws SQLException {
+        customerList.add(customerManagerLm.addCustomer(name, lastName, phoneNumber, email,uploadOver12År, eventID));
     }
 
-    public ObservableList<Customer> getCustomers() {
-        customerList = customerManagerLm.getCustomers();
+    public ObservableList<Customer> getCustomers(int eventID) {
+        customerList = customerManagerLm.getCustomers(eventID);
         return customerList;
     }
 

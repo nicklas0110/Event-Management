@@ -18,7 +18,7 @@ public class CustomerDAO {
         DC = new DatabaseConnector();
     }
 
-    public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År) throws SQLException {
+    public Customer addCustomer(String name, String lastName, String phoneNumber, String email, Boolean uploadOver12År, int eventID) throws SQLException {
         // This is the method to create a EventCoordinator in the Database. This is also where the EventCoordinator gets an ID.
 
         try (Connection connection = DC.getConnection()) {
@@ -37,6 +37,8 @@ public class CustomerDAO {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 int id = rs.getInt(1);
+                //Add relation between Customer and Event
+                setEventCustomer(id, eventID);
                 return new Customer(id, name, lastName, phoneNumber, email, uploadOver12År);
             }
         } catch (SQLServerException throwables) {
@@ -47,18 +49,22 @@ public class CustomerDAO {
         return null;
     }
 
-    public List<Customer> getAllCustomers() throws SQLException {
+    public List<Customer> getAllCustomers(int eventID) throws SQLException {
         List<Customer> allCustomer = new ArrayList<>();
         try (Connection connection = DC.getConnection()) {
-
-
-            String sql = "SELECT * FROM CustomerTable WHERE Customer = 'Customer'";
+            String select = "SELECT ct.CustomerID AS CustomerID, ct.NameCustomer, ct.LastNameCustomer, ct.PhoneNumberCustomer, ct.EmailCustomer, ct.is_checked";
+            String from = " FROM CustomerTable AS ct INNER JOIN EventCustomer AS ec ON ct.CustomerID = ec.CustomerID ";
+            String where = " WHERE Customer = 'Customer' AND ec.EventID = ?";
+            String sql = select + from + where;
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, eventID);
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) { // Creates and adds song objects into an array list
-                Customer customer = new Customer(rs.getInt("CustomerID"), rs.getString("NameCustomer"),
-                        rs.getString("LastNameCustomer"), rs.getString("PhoneNumberCustomer"), rs.getString("EmailCustomer"),
-                        rs.getBoolean("is_checked"));
+
+                Customer customer = new Customer(rs.getInt(1), rs.getString(2),
+                        rs.getString(3), rs.getString(4), rs.getString(5),
+                        rs.getBoolean(6));
                 allCustomer.add(customer);
             }
 
@@ -134,6 +140,27 @@ public class CustomerDAO {
         }
 
         return (Customer) ageUnder12;
+    }
+
+    public void setEventCustomer(int customerId, int eventId){
+        try (Connection connection = DC.getConnection()) {
+            String sql = "INSERT INTO EventCustomer(CustomerID, EventID) VALUES (?,?);";
+
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setInt(1, customerId);
+            ps.setInt(2, eventId);
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                int id = rs.getInt(1);
+                //Add relation between Customer and Event
+            }
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 }

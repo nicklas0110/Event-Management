@@ -5,6 +5,7 @@ import GUI.Model.CustomerModel;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
 import GUI.controller.SimpleDialogController;
+import GUI.controller.UserConrollers.CustomerController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,7 +62,7 @@ public class EventCoordinatorController  implements Initializable   {
 
     private EventCoordinatorModel eventCoordinatorModel;
     private EventModel eventModel;
-    private Event selectedEvent;
+    public Event selectedEvent;
     private EditEventController editEventController;
 
 
@@ -204,10 +205,16 @@ public class EventCoordinatorController  implements Initializable   {
 
     public void UserInfoBtn(ActionEvent event) throws IOException {
         Stage switcher = (Stage) btnUserInfo.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+//        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
+//        FXMLLoader loader = new FXMLLoader();
+//        Parent root = loader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
         switcher.setTitle("Add New Event");
-        Scene scene = new Scene(root);
-        switcher.setScene(scene);
+        CreateCustomerController customerController = fxmlLoader.<CreateCustomerController>getController();
+        customerController.setEventID(selectedEvent);
+        switcher.setScene(new Scene(root1));
+        switcher.show();
     }
 
 
