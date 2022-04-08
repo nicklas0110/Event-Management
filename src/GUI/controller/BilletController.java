@@ -1,5 +1,6 @@
 package GUI.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +13,12 @@ import java.io.IOException;
 
 public class BilletController {
     @FXML
-    private Button close;
+    public JFXButton btnTicketBack;
 
 
-    public void closeBtn(ActionEvent actionEvent) throws IOException {
-        Stage switcher = (Stage) close.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/MyTickets.fxml"));
+    public void backToCustomerView(ActionEvent event) throws IOException {
+        Stage switcher = (Stage) btnTicketBack.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/CustomerViews/Customer.fxml"));
         Scene scene = new Scene(root);
         switcher.setTitle("EventCoordinatorManagement");
         switcher.setScene(scene);

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
@@ -10,8 +12,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="BilletView" prefHeight="263.0" prefWidth="606.0" stylesheets="@stylesheet/billet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.BilletController">
+<AnchorPane fx:id="BilletView" prefHeight="319.0" prefWidth="600.0" stylesheets="@stylesheet/billet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.controller.BilletController">
    <children>
+      <JFXButton buttonType="RAISED" layoutX="344.0" layoutY="273.0" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #00CBD6FF;" text="Print Ticket" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <Pane layoutX="4.0" layoutY="62.0" prefHeight="186.0" prefWidth="598.0" style="-fx-border-color: WHITE; -fx-border-radius: 10px;">
          <children>
             <Text fill="WHITE" layoutX="234.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :  05-04-2022 ">
@@ -56,5 +62,9 @@
             <Glow />
          </effect>
       </Text>
+      <JFXButton fx:id="btnTicketBack" buttonType="RAISED" layoutX="470.0" layoutY="273.0" onAction="#backToCustomerView" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #00CBD6FF;" text="Close" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
    </children>
 </AnchorPane>
