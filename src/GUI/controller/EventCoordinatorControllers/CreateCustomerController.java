@@ -31,6 +31,7 @@ public class CreateCustomerController implements Initializable {
     public Customer selectedCustomer;
     public PieChart overOrUnder12YearsPieChart;
     public Text eventNameTxt;
+    public JFXButton printTicket;
     private int over12;
     private int under12;
 
@@ -193,5 +194,8 @@ public class CreateCustomerController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void printTicketBtn(ActionEvent actionEvent) {
     }
 }

@@ -73,17 +73,18 @@
             <CheckBox fx:id="checkBoxOver12Years" layoutX="86.0" layoutY="226.0" mnemonicParsing="false" text="Over 12 år " />
          </children>
       </Pane>
-      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="895.0" layoutY="543.0" onAction="#handleBtnBack" prefHeight="51.0" prefWidth="143.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Back">
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="895.0" layoutY="540.0" onAction="#handleBtnBack" prefHeight="51.0" prefWidth="143.0" ripplerFill="#00cbd6" style="-fx-border-color: #00CBD6;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="deleteCustomer" buttonType="RAISED" layoutX="468.0" layoutY="542.0" onAction="#deleteCustomerBtn" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Delete Customer" textFill="WHITE" />
+      <JFXButton fx:id="deleteCustomer" buttonType="RAISED" layoutX="468.0" layoutY="540.0" onAction="#deleteCustomerBtn" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #00CBD6;" text="Delete Customer" textFill="WHITE" />
       <JFXButton fx:id="editCustomer" buttonType="RAISED" layoutX="305.0" layoutY="540.0" onAction="#EditCustomerBtn" prefHeight="51.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Edit Customer" textFill="WHITE" />
       <Text layoutX="14.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Under 12 år:" />
       <Text layoutX="158.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Over 12 år:" />
       <Text fx:id="under12YearsTxt" layoutX="86.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="over12YearsTxt" layoutX="220.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <PieChart fx:id="overOrUnder12YearsPieChart" layoutX="5.0" layoutY="409.0" prefHeight="206.0" prefWidth="253.0" />
+      <JFXButton fx:id="printTicket" buttonType="RAISED" layoutX="627.0" layoutY="540.0" onAction="#printTicketBtn" prefHeight="51.0" prefWidth="149.0" style="-fx-background-color: #00CBD6;" text="Print Ticket" textFill="WHITE" />
    </children>
 </AnchorPane>

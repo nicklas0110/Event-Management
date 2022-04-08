@@ -37,4 +37,7 @@ public class CustomerController {
         switcher.setScene(scene);
 
     }
+
+    public void eventInfoBtn(ActionEvent actionEvent) {
+    }
 }
