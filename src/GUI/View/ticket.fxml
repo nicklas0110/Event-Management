@@ -54,7 +54,7 @@
             </Text>
          </children>
       </Pane>
-      <Text fill="WHITE" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JAZZ CONCERT" textAlignment="CENTER" wrappingWidth="606.0">
+      <Text fx:id="tickietTitle" fill="WHITE" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JAZZ CONCERT" textAlignment="CENTER" wrappingWidth="606.0">
          <font>
             <Font size="33.0" />
          </font>
