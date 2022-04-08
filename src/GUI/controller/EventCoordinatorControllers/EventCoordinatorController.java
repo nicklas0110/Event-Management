@@ -1,11 +1,9 @@
 package GUI.controller.EventCoordinatorControllers;
 
 import BE.Event;
-import GUI.Model.CustomerModel;
 import GUI.Model.EventCoordinatorModel;
 import GUI.Model.EventModel;
 import GUI.controller.SimpleDialogController;
-import GUI.controller.UserConrollers.CustomerController;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,13 +46,6 @@ public class EventCoordinatorController  implements Initializable   {
     public JFXButton btnDeleteEvent;
     @FXML
     public JFXButton btnUserInfo;
-
-    @FXML
-    private Button onActionAddEvent;
-
-    @FXML
-    private Button btnEditEventKoordinator;
-
     @FXML
     private Button btnLogOuteventCoordinator;
 
@@ -114,15 +105,6 @@ public class EventCoordinatorController  implements Initializable   {
         stage.show();
         stage.setOnHiding(event ->
         {
-            /*
-            try {
-                allEvents = FXCollections.observableList(eventModel.getEvents());
-                tableViewLoadEvents(allEvents);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-             */
         });
     }
 
@@ -164,21 +146,6 @@ public class EventCoordinatorController  implements Initializable   {
              EditEventController editEventController = parent.getController();
              editEventController.setSelectedEvent(selectedEvent);
              editEventCoordinatorStage.show();
-
-
-
-
-            /*Stage editEventStage;
-            editEventStage = new Stage();
-            editEventStage.setScene(mainWindowScene);
-            EditEventController editEventController = parent.getController();
-            editEventController.setSelectedEvent(selectedEvent);
-            editEventStage.show();
-            editEventStage.setOnHiding(event ->
-            {
-            });
-
-         */
         }
 
 
@@ -207,10 +174,7 @@ public class EventCoordinatorController  implements Initializable   {
         Stage switcher = (Stage) btnUserInfo.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
-//        Parent root = FXMLLoader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
-//        FXMLLoader loader = new FXMLLoader();
-//        Parent root = loader.load(getClass().getResource("/GUI/View/EventCoordinatorViews/CreateCustomer.fxml"));
-        switcher.setTitle("Add New Event");
+        switcher.setTitle("Event");
         CreateCustomerController customerController = fxmlLoader.<CreateCustomerController>getController();
         customerController.setEventID(selectedEvent);
         switcher.setScene(new Scene(root1));
@@ -219,28 +183,6 @@ public class EventCoordinatorController  implements Initializable   {
 
 
 
-/*
-    @Override
-
-    public void initialize(URL location, ResourceBundle resources) {
-        selectedEvent();
-
-        tcId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        tcEventName.setCellValueFactory(new PropertyValueFactory<>("EventName"));
-        tcEventDate.setCellValueFactory(new PropertyValueFactory<>("EventDate"));
-        tcEventLocation.setCellValueFactory(new PropertyValueFactory<>("EventLocation"));
-        tcEventTime.setCellValueFactory(new PropertyValueFactory<>("EventTime"));
-        tcEventInfo.setCellValueFactory(new PropertyValueFactory<>("EventInfo"));
-
-        try {
-            allEvents = FXCollections.observableArrayList(eventModel.getEvents());
-            tableViewLoadEvents(allEvents);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
- */
 
 
 }
