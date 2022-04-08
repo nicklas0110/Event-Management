@@ -78,14 +78,19 @@ public class CustomerDAO {
     }
 
     public void removeCustomer(Customer selectedCustomer) {
-        String sql1 = "DELETE FROM CustomerTable WHERE Id = (?);";
+        String sql1 = "DELETE FROM EventCustomer WHERE CustomerID = (?);";
+        String sql2 = "DELETE FROM CustomerTable WHERE CustomerID = (?);";
 
         try (Connection connection = DC.getConnection()) {
             PreparedStatement ps1 = connection.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps2 = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
 
             ps1.setInt(1, selectedCustomer.getId());
+            ps2.setInt(1, selectedCustomer.getId());
 
             ps1.executeUpdate();
+            ps2.executeUpdate();
+
 
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
